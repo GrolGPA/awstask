@@ -8,7 +8,7 @@ services:
                         - front
                         - backend
                 environment:
-                        - VIRTUAL_HOST=dev.storiestoys.in.ua,dev.admin.storiestoys.in.ua,dev.db.storiestoys.in.ua
+                        - VIRTUAL_HOST=aws.task,db.aws.task
 
         apache:
                 build: ./docker/apache
