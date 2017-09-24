@@ -39,5 +39,7 @@ class Login
         {
             include 'application/views/Login.php';
         }
+
+        ;
     }
 }

@@ -5,7 +5,8 @@
 <body>
 <?php
 /** Show greeting */
-echo 'Hello, '.$this->model->getData();
+echo 'Hello, '.$this->model->getData().'<br>';
 ?>
+<a href="/logout">Logout</a>
 </body>
 </html>

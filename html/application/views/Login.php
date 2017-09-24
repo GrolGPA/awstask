@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
-<?php echo $result; ?>
+
 <body>
 <p> Please login to showing diary</p>
 <form action="" method="post">
