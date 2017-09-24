@@ -37,8 +37,18 @@ class AppStarter
             $session_start = new controllers\Main();
             $session_start->action_index();
 
+
         }
-        catch (AutoloadException $e)
+        catch (exceptions\AutoloadException $e)
+        {
+            die ( $e ->getMessage() );
+        }
+        catch (exceptions\RuntimeException $e)
+        {
+            die ( $e ->getMessage() );
+        }
+
+        catch (exceptions\DbException $e)
         {
             die ( $e ->getMessage() );
         }
@@ -58,12 +68,6 @@ class AppStarter
 //        print_r($req->getResource(user));
 
 
-        /**
-         * test DB connection
-         */
-
-        $req = new models\DBConnect();
-        echo $req->queryList();
     }
 
 

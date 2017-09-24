@@ -22,11 +22,13 @@ class Controller
     function __construct()
     {
         $this->view = new views\View();
+        /**
+         * Setting DB configs in registy
+         */
         $this->config = new models\Config();
         $this->config ->setRegistry();
-        // TO DO
-//        $this->config->setConfig();
-//        DataBase::connect;
+
+
     }
 
     /**
@@ -34,6 +36,8 @@ class Controller
      */
     function action_index()
     {
+
+
     }
 
 }

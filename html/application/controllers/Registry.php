@@ -74,13 +74,19 @@ class Registry
     /**
      * @param $key
      * @return mixed
+     * @throws exceptions\RuntimeException
      */
     public function getResource($key)
     {
-        if (isset($this->resources[$key])) {
+        if (!isset($this->resources[$key]))
+        {
+            throw new exceptions\RuntimeException ('Resource ' . $key . ' not found in the registry');
+        }
+        else
+        {
             return $this->resources[$key];
         }
-        throw new RuntimeException ('Resource ' . $key . ' not found in the registry');
+
     }
 
 }

@@ -20,6 +20,9 @@ class Main extends Controller
     function action_index()
     {
         $this->view->generate('Main.php', 'Template.php');
+
+        $login = new Login();
+        $login->invoke();
     }
 
 }

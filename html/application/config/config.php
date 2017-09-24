@@ -9,8 +9,8 @@
  */
 
 return array(
-    'dbhost' => 'db',
-    'database' => 'local',
+    'host' => 'db',
+    'dbname' => 'local',
     'user' => 'local',
     'password' => 'local'
 );

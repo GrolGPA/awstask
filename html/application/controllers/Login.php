@@ -1,6 +1,6 @@
 <?php
 /**
- * @property class ${CLASSNAME}
+ * @property class Login
  *
  * @autor Pavel Gavrikov <gpolbox@gmail.com>
  *
@@ -10,8 +10,34 @@
 
 namespace application\controllers;
 
+use application\models;
+
 
 class Login
 {
+    public $model;
 
+
+    public function __construct()
+    {
+        $this ->model = new models\Login();
+    }
+
+
+    /**
+     * Calling to the getLogin() function of model Login and storing it value
+     */
+    public function invoke()
+    {
+        $result = $this->model->run();
+
+        if ($result == "login")
+        {
+            include 'application/views/AfterLogin.php';
+        }
+        else
+        {
+            include 'application/views/Login.php';
+        }
+    }
 }

@@ -24,9 +24,9 @@ class Config
     function __construct()
     {
         $this->config = array(
-            'host' => 'db',
+            'host' => 'db1',
             'dbname' => 'local',
-            'user' => 'local',
+            'username' => 'local',
             'password' => 'local');
     }
 
@@ -66,11 +66,6 @@ class Config
     }
 
 
-    public function getConfig()
-    {
-
-        print_r($this->config);
-    }
 
 
 
