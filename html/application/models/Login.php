@@ -10,7 +10,7 @@
 
 namespace application\models;
 
-use application\models;
+
 
 
 class Login extends Model
@@ -26,22 +26,22 @@ class Login extends Model
             ':username' => $_POST['username'],
             ':password' => $_POST['password']
         );
-        $this->stmt = new models\DB();
+        $this->stmt = new DB();
         $this->stmt->queryList($sql, $args);
         $count = $this->stmt->count();
 
-        if($count > 0) {
+        if($count > 0)
+        {
             Session::init();
             Session::set('loggedIn', true);
             return 'login';
-
-        } else {
+        }
+        else
+        {
             return 'anouthorized user';
         }
 
     }
-
-
 
 
     /**
