@@ -10,24 +10,23 @@
 
 namespace application\models;
 
+use application\models;
 
 
 class Login extends Model
 {
     private $stmt;
 
-    /**
-     * @return string
-     */
     public function run()
     {
+        $username = trim($_POST['username']);
 
-        $sql = 'SELECT userID FROM users WHERE username = :username AND password = MD5(:password)';
+        $sql = 'SELECT userID FROM users WHERE username = :username AND password = :password';
         $args = array(
             ':username' => $_POST['username'],
             ':password' => $_POST['password']
         );
-        $this->stmt = new DB();
+        $this->stmt = new models\DB();
         $this->stmt->queryList($sql, $args);
         $count = $this->stmt->count();
 
@@ -43,9 +42,7 @@ class Login extends Model
     }
 
 
-    /**
-     *  Legasy part
-     */
+
 
     /**
      * @return string
@@ -55,5 +52,31 @@ class Login extends Model
         $username = $_REQUEST['username'];
         return $username;
     }
+
+
+
+    /**
+     *  Legasy part
+     */
+
+//    /**
+//     * Function return status of authorization
+//     *
+//     * @return string
+//     */
+//    public function getLogin()
+//    {
+//        if(isset($_REQUEST['username'])&&isset($_REQUEST['password']))
+//        {
+//            if($_REQUEST['username']== 'test' && $_REQUEST['password']== 'test')
+//            {
+//                return 'login';
+//            }
+//            else
+//            {
+//                return 'anouthorized user';
+//            }
+//        }
+//    }
 
 }

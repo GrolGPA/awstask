@@ -31,7 +31,8 @@ class Login
     {
         $result = $this->model->run();
 
-        if ($result == "login")
+
+        if (models\Session::get('loggedIn') == true )
         {
             include 'application/views/AfterLogin.php';
         }
@@ -40,6 +41,5 @@ class Login
             include 'application/views/Login.php';
         }
 
-        ;
     }
 }

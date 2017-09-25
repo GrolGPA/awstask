@@ -7,6 +7,6 @@
 /** Show greeting */
 echo 'Hello, '.$this->model->getData().'<br>';
 ?>
-<a href="/logout">Logout</a>
+<a href="Main/logout">Logout</a>
 </body>
 </html>

@@ -37,22 +37,22 @@ class Route
         }
 
         // добавляем префиксы
-//        $model_name = 'models/'.$controller_name;
-//        $controller_name = 'controlers/'.$controller_name;
-//        $action_name = 'action/'.$action_name;
+        $model_name = "models\\".$controller_name;
+//        $controller_name = 'controllers\\'.$controller_name;
+        //$action_name = 'action/'.$action_name;
 
         // подцепляем файл с классом модели (файла модели может и не быть)
 
         $model_file = strtolower($model_name).'.php';
-        $model_path = "application/models/".$model_file;
+        $model_path = "models/".$model_file;
         if(file_exists($model_path))
         {
-            include "application/models/".$model_file;
+            include "models/".$model_file;
         }
 
         // подцепляем файл с классом контроллера
-        $controller_file = strtolower($controller_name).'.php';
-        $controller_path = "application/controllers/".$controller_file;
+        //$controller_file = strtolower($controller_name).'.php';
+        $controller_path = "application\\controllers\\".$controller_name;
 //        if(file_exists($controller_path))
 //        {
 //            include "application/controllers/".$controller_file;
@@ -67,7 +67,7 @@ class Route
 //        }
 
         // создаем контроллер
-        $controller = new $controller_name;
+        $controller = new $controller_path;
         $action = $action_name;
 
         if(method_exists($controller, $action))

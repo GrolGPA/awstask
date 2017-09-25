@@ -14,36 +14,35 @@ use application\models;
 
 class Main extends Controller
 {
-
-    /**
-     * Main constructor. Init session
-     */
     public function __construct() {
         parent::__construct();
         models\Session::init();
         $logged = models\Session::get('loggedIn');
         if($logged == false) {
             models\Session::destroy();
-            //header('Location: ../login');
-            exit();
+           // header('Location: ../Main');
+           // include 'application/views/Login.php';
+//            exit();
         }
     }
 
+
     public function logout() {
         models\Session::destroy();
-        include 'application/views/Login.php';
-        exit();
-    }
+        header('Location: ../Main');
+        //include 'application/views/Login.php';
+        //exit();
 
+    }
 
     /**
      *
      */
-    function action_index()
+    function index()
     {
-        $this->view->generate('Main.php', 'Template.php');
 
-        //Show login form
+        $this->view->generate('Diary.php', 'Template.php');
+
         $login = new Login();
         $login->invoke();
     }

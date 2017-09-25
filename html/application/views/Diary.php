@@ -5,6 +5,7 @@
     <title>Diary</title>
 </head>
 <body>
-TEST DIARY
+<H1>Hello in family diary</H1>
+<H3>Your housework:<?php  ?></H3>
 </body>
 </html>

@@ -5,17 +5,17 @@
     <title>Family diary</title>
 </head>
 <body>
-    <?php application\models\Session::init(); ?>
+<?php application\models\Session::init(); ?>
 
     <H1 aling='center'>Family diary</H1>
-    <?php if(application\models\Session::get('loggedIn') == true)
-    {
-        include 'application/views/'.$content_view;
 
-    }
+<?php
+if (\application\models\Session::get('loggedIn') == true )
+{
+include 'application/views/'.$content_view; }
+?>
 
 
-    ?>
 
 
 

@@ -14,5 +14,10 @@ namespace application\controllers;
 class Diary
 {
 
+    public function testAction()
+    {
+        echo "Action worked";
+    }
+
 
 }

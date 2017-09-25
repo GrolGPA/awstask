@@ -9,6 +9,7 @@
  * Time: 22:13
  */
 require_once __DIR__ . '/SplClassLoader.php';
+require_once __DIR__ . '/controllers/Route.php';
 
 use application\controllers;
 use application\exceptions;
@@ -33,9 +34,9 @@ class AppStarter
              * starting autoloading classes
              */
             self::autoloader();
-
-            $session_start = new controllers\Main();
-            $session_start->action_index();
+            controllers\Route::start();
+//            $session_start = new controllers\Main();
+//            $session_start->index();
 
 
         }
