@@ -35,4 +35,5 @@ class Registration extends Controller
         $this->view->genRegForm('Registration.php', 'Template.php');
 
     }
+
 }

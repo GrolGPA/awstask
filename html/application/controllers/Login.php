@@ -13,9 +13,8 @@ namespace application\controllers;
 use application\models;
 
 
-class Login
+class Login extends Controller
 {
-    public $model;
 
 
     public function __construct()
@@ -40,6 +39,7 @@ class Login
         {
             include 'application/views/Login.php';
         }
+
 
     }
 }

@@ -4,7 +4,9 @@
 </head>
 <body>
 <?php
-/** Show greeting */
+/**
+ * Show greeting
+ */
 echo 'Hello, '.$this->model->getData().'<br>';
 ?>
 <a href="Main/logout">Logout</a>

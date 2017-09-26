@@ -18,4 +18,16 @@ class Model
     public function getData()
     {
     }
+
+    /**
+     * @param $sql
+     * @param $args
+     * @return DB
+     */
+    public function run($sql, $args)
+    {
+        $this->stmt = new DB();
+        $this->stmt->queryList($sql, $args);
+        return $this->stmt;
+    }
 }

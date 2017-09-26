@@ -17,8 +17,9 @@ use application\views;
 
 class Controller
 {
-    public $model;
-    public $view;
+    protected $model;
+    protected $view;
+    protected $config;
 
     function __construct()
     {
@@ -29,7 +30,6 @@ class Controller
         $this->config = new models\Config();
         $this->config ->setRegistry();
 
-
     }
 
     /**
@@ -39,6 +39,12 @@ class Controller
     {
 
 
+    }
+
+    function run()
+    {
+        $this->model->run();
+       // $this->view = new views\View();
     }
 
 }

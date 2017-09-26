@@ -12,7 +12,7 @@
     </p>
     <p>
         <label>Select category:</label>
-        <select id="category" name="category" size="3" multiple>
+        <select id="category" name="category" size="3">
             <option selected value="1">Father</option>
             <option value="2">Mother</option>
             <option value="3">Child</option>

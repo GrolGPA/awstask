@@ -10,14 +10,30 @@
 
 namespace application\controllers;
 
+use application\models;
 
-class Diary
+class Diary extends Controller
 {
 
-    public function testAction()
+    function __construct()
     {
-        echo "Action worked";
+        parent::__construct();
+        $this->model = new models\Diary();
+
     }
 
+    public function vievTasks()
+    {
+
+
+    }
+
+
+    public function addTask()
+    {
+        $this->model->addTask();
+
+        //header('Location: ../Main');
+    }
 
 }

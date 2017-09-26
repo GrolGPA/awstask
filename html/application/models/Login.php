@@ -15,8 +15,11 @@ namespace application\models;
 
 class Login extends Model
 {
-    //private $stmt;
 
+
+    /**
+     * @return string
+     */
     public function run()
     {
 
@@ -25,8 +28,7 @@ class Login extends Model
             ':username' => $_POST['username'],
             ':password' => $_POST['password']
         );
-        $this->stmt = new DB();
-        $this->stmt->queryList($sql, $args);
+        $this->stmt = parent::run($sql, $args);
         $count = $this->stmt->count();
 
         if($count > 0)
@@ -39,9 +41,7 @@ class Login extends Model
         {
             return 'anouthorized user';
         }
-
     }
-
 
     /**
      * @return string
