@@ -36,8 +36,15 @@ class Registration extends Model
         }
         else
         {
-
-
+            $sql = "INSERT INTO users (username, password, categoryID) VALUES (:username, md5(:password), :categoryID)";
+            $args = array(
+                ":username" => $_POST['username'],
+                ":password" => $_POST['password'],
+                ":categoryID" => $_POST['category']
+                );
+            $this->stmt = new DB();
+            $this->stmt->queryList($sql, $args);
+            header('Location: ../Main');
 
         }
 

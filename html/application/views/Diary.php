@@ -5,7 +5,7 @@
     <title>Diary</title>
 </head>
 <body>
-<H1>Hello in family diary</H1>
+<H1>Welcome to the family diary!</H1>
 <H3>Your housework:<?php  ?></H3>
 </body>
 </html>

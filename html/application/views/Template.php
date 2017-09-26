@@ -10,10 +10,14 @@
     <H1 aling='center'>Family diary</H1>
 
 <?php
-include 'application/views/'.$content_view;
+
 if (\application\models\Session::get('loggedIn') == true )
 {
     include 'application/views/'.$content_view;
+}
+else
+{
+    //include 'application/views/'.$auth_view;
 }
 ?>
 

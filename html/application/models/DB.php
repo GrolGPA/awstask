@@ -63,10 +63,13 @@ use application\exceptions;
         $connection = $this->startConnection();
         $this->stmt = $connection->prepare($sql);
         $this->stmt->execute($args);
+
     }
 
 
      /**
+      * Counting rows
+      *
       * @return mixed
       */
      public function count()

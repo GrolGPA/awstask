@@ -28,9 +28,14 @@ class View
 
     }
 
-    function genRegForm($content_view, $template_view)
+    function genLogForm($auth_view, $template_view)
     {
-        include 'application/views/'.$template_view;
+        include 'application/views/'.$auth_view;
+    }
+
+    function genRegForm($auth_view, $template_view)
+    {
+        include 'application/views/'.$auth_view;
     }
 
 }
