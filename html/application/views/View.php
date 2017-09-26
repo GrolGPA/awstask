@@ -25,7 +25,12 @@ class View
         */
 
         include 'application/views/'.$template_view;
-        //include 'application/views/'.$content_view;
 
     }
+
+    function genRegForm($content_view, $template_view)
+    {
+        include 'application/views/'.$template_view;
+    }
+
 }

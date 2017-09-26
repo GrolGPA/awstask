@@ -22,6 +22,10 @@
     <button type="submit"><span>Login</span></button>
     <button type="reset"><span>Reset</span></button>
 </p>
+
 </form>
+<p>
+<a href="Registration/run">Registration</a>
+</p>
 </body>
 </html>

@@ -35,7 +35,7 @@ class Controller
     /**
      * default action
      */
-    function action_index()
+    function index()
     {
 
 

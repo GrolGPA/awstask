@@ -14,7 +14,8 @@ use application\models;
 
 class Main extends Controller
 {
-    public function __construct() {
+    public function __construct()
+    {
         parent::__construct();
         models\Session::init();
         $logged = models\Session::get('loggedIn');
@@ -27,7 +28,11 @@ class Main extends Controller
     }
 
 
-    public function logout() {
+    /**
+     * Logout user and destroy session
+     */
+    public function logout()
+    {
         models\Session::destroy();
         header('Location: ../Main');
         //include 'application/views/Login.php';
@@ -35,12 +40,19 @@ class Main extends Controller
 
     }
 
+    function addUser()
+    {
+        $this->view->generate('Registration.php', 'Template.php');
+        $registration = new Registration;
+        $registration->run();
+    }
+
+
     /**
-     *
+     * Generate views and show login form
      */
     function index()
     {
-
         $this->view->generate('Diary.php', 'Template.php');
 
         $login = new Login();

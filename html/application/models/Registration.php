@@ -13,16 +13,15 @@ namespace application\models;
 use application\exceptions;
 
 
-class Registration
+class Registration extends Model
 {
 
-    private $stmt;
 
     public function run()
     {
 
 
-        $sql = 'SELECT userID FROM users WHERE username = :username AND password = :password';
+        $sql = 'SELECT userID FROM users WHERE username = :username';
         $args = array(
             ':username' => $_POST['username']
         );
@@ -33,10 +32,13 @@ class Registration
         if($count > 0)
         {
             throw new exceptions\Registration("User already registered");
+            //header('Location: ../Registration');
         }
         else
         {
-            header('Location: ../Registration');
+
+
+
         }
 
     }

@@ -10,19 +10,29 @@
 
 namespace application\controllers;
 
+use application\models;
+use application\views;
 
-class Registration
+class Registration extends Controller
 {
     public $model;
+    public $view;
 
+    /**
+     * Registration constructor.
+     */
     public function __construct()
     {
+        $this->config = new models\Config();
+        $this->config ->setRegistry();
         $this ->model = new models\Registration();
     }
 
-    public function addUser ()
+    public function run()
     {
-
+        $this->model->run();
+        $this->view = new views\View();
+        $this->view->genRegForm('Registration.php', 'Template.php');
 
     }
 }

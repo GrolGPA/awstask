@@ -13,6 +13,8 @@ namespace application\models;
 
 class Model
 {
+    protected $stmt;
+
     public function getData()
     {
     }

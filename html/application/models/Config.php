@@ -23,8 +23,9 @@ class Config
      */
     function __construct()
     {
+        //Setting parametrs of Database
         $this->config = array(
-            'host' => 'db1',
+            'host' => 'db', //value overridden in models/DB.php
             'dbname' => 'local',
             'username' => 'local',
             'password' => 'local');
