@@ -19,16 +19,12 @@ class Diary extends Controller
     {
         parent::__construct();
         $this->model = new models\Diary();
-
     }
 
     public function getTasks()
     {
-
        $tasks = $this->model->getData();
-
-
-
+       return $tasks;
     }
 
 
@@ -43,11 +39,12 @@ class Diary extends Controller
 
     public function run()
     {
-
-        self::getTasks();
+        $tasks=self::getTasks();
         include_once ('application/views/Diary.php');
-        //include_once ('application/views/AddTask.php');
 
+        /** @var TEST $user */
+        $user = models\Session::get('member');
+        print_r ($user);
     }
 
 }

@@ -56,8 +56,11 @@ class Main extends Controller
     {
 
         $this->view->generate('Content.php', 'Template.php');
-        $diary = new Diary();
-        $diary->run();
+        if (\application\models\Session::get('loggedIn') == true )
+        {
+            $diary = new Diary();
+            $diary->run();
+        }
         $login = new Login();
         $login->invoke();
     }

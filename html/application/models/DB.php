@@ -19,7 +19,7 @@ use application\exceptions;
     private $dbname;
     private $username;
     private $password;
-    private $stmt;
+    public $stmt;
 
 
 
@@ -41,11 +41,11 @@ use application\exceptions;
       * @return \PDO
       * @throws exceptions\DbException
       */
-     private function startConnection()
+     private function startConnection($options = null)
     {
         $this->getConfig();
 
-        $connection = new \PDO("mysql:dbname=$this->dbname;host=$this->host", $this->username, $this->password);
+        $connection = new \PDO("mysql:dbname=$this->dbname;host=$this->host", $this->username, $this->password, $options);
         if (!empty($connection->error))
         {
             throw new exceptions\DbException("Could not connect to the database.  Please check your configuration.");
@@ -68,15 +68,31 @@ use application\exceptions;
 
     }
 
-    public function getArray($sql)
-    {
-        $connection = $this->startConnection();
-        $this->stmt = $connection->query($sql);
-        return $this->stmt;
+     /**
+      * @param $sql
+      * @return array
+      */
 
+     public function getData($sql)
+    {
+
+        $options = array(
+            \PDO::ATTR_ERRMODE            => \PDO::ERRMODE_EXCEPTION,
+            \PDO::ATTR_DEFAULT_FETCH_MODE => \PDO::FETCH_ASSOC
+        );
+        $connection = $this->startConnection($options);
+        $this->stmt = $connection->prepare($sql);
+        $this->stmt->execute();
+        $result = $this->stmt->fetchAll();
+        return $result;
     }
 
 
+     public function fetch()
+     {
+         $result = $this->stmt->fetchAll();
+         return $result;
+     }
      /**
       * Counting rows
       *

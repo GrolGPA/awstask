@@ -23,7 +23,7 @@ class Login extends Model
     public function run()
     {
 
-        $sql = 'SELECT userID FROM users WHERE username = :username AND password = md5(:password)';
+        $sql = 'SELECT `userID` FROM `users` WHERE `username` = :username AND `password` = md5(:password)';
         $args = array(
             ':username' => $_POST['username'],
             ':password' => $_POST['password']
@@ -35,6 +35,18 @@ class Login extends Model
         {
             Session::init();
             Session::set('loggedIn', true);
+
+            /** Seek type of family member */
+            $sql = 'SELECT `category`, `username` FROM `categories` JOIN  `users` ON categories.categoryID = users.categoryID WHERE `username` = :username';
+            $args = array(
+                ':username' => $_POST['username']
+            );
+            $this->stmt = parent::run($sql, $args);
+            $user = $this->stmt->fetch();
+            $user_cat = $user['category'];
+            Session::set('member', $user_cat);
+
+            return $user_cat;
             return 'login';
         }
         else

@@ -58,13 +58,9 @@ class AppStarter
             die ( $e ->__toString() );
         }
 
-        /**
-         * TESTS
-         */
+        /** TESTS */
 
-        /**
-         * test of Regestry
-         */
+        /** test of Regestry */
 //        $req = controllers\Registry::getInstance();
 //        print_r($req->getResource(user));
 

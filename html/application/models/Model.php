@@ -15,8 +15,11 @@ class Model
 {
     protected $stmt;
 
-    public function getData()
+    public function getData($sql)
     {
+        $this->stmt = new DB();
+        $data = $this->stmt->getData($sql);
+        return $data;
     }
 
     /**

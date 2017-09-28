@@ -16,22 +16,16 @@ use application\exceptions;
 class Diary extends Model
 {
 
+    /**
+     * Get all list of tasks
+     *
+     * @return array
+     */
     public function getData()
     {
-
-        $sql = 'SELECT *  FROM tasks';
-        $this->stmt = new DB();
-        $statement = $this->stmt->getArray($sql);
-        $row = $statement->fetch(\PDO::FETCH_ASSOC);
-
-//        while()
-//        {
-//
-//            echo "test";
-//            //$row['id'] . ' ' . $row['name'];
-//        }
-        return $row;
-
+        $sql = 'SELECT `task`, `category`, `done`, `filePath` FROM `tasks` JOIN `categories` ON tasks.taskDistrib = categories.categoryID';
+        $data = parent::getData($sql);
+        return $data;
     }
 
     function uplFile()
@@ -60,13 +54,18 @@ class Diary extends Model
 
 
 
-//        $uploaddir = '/var/www/uploads/';
-//        $uploadfile = $uploaddir . basename($_FILES['userfile']['name']);
-//        if (move_uploaded_file($_FILES['userfile']['tmp_name'], $uploadfile)) {
-//            echo "Файл корректен и был успешно загружен.\n";
-//        } else {
-//            echo "Возможная атака с помощью файловой загрузки!\n";
+        $uploaddir = '/var/www/uploads/';
+        $uploadfile = $uploaddir . basename($_FILES['userfile']['name']);
+//        if(is_uploaded_file($_FILES['userfile']['tmp_name']))
+//        {
+//            echo "Загрузка удалась";
 //        }
+
+        if (move_uploaded_file($_FILES['userfile']['tmp_name'], $uploadfile)) {
+            echo "Файл корректен и был успешно загружен.\n";
+        } else {
+            echo "Возможная атака с помощью файловой загрузки!\n";
+        }
 
 
 
@@ -77,7 +76,7 @@ class Diary extends Model
 //        $file = $this->uplFile();
 
 //        $sql = "INSERT INTO tasks (taskDistrib, task, filePath) VALUES (:taskDistrib, :task, :filePathategoryID)";
-        $sql = "INSERT INTO tasks (taskDistrib, task) VALUES (:taskDistrib, :task)";
+        $sql = "INSERT INTO tasks (`taskDistrib`, `task`) VALUES (:taskDistrib, :task)";
         $args = array(
             ":task" => $_POST['task'],
 //            ":filePath" => $_POST['filePath'],
