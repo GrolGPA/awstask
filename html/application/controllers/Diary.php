@@ -22,18 +22,32 @@ class Diary extends Controller
 
     }
 
-    public function vievTasks()
+    public function getTasks()
     {
+
+       $tasks = $this->model->getData();
+
 
 
     }
 
 
+    /**
+     *  Add task to DB
+     */
     public function addTask()
     {
         $this->model->addTask();
+        header('Location: ../Main');
+    }
 
-        //header('Location: ../Main');
+    public function run()
+    {
+
+        self::getTasks();
+        include_once ('application/views/Diary.php');
+        //include_once ('application/views/AddTask.php');
+
     }
 
 }

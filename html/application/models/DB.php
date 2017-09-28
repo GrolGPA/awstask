@@ -28,7 +28,9 @@ use application\exceptions;
       */
      private function getConfig()
      {
-        $reg = controllers\Registry::getInstance();
+
+
+         $reg = controllers\Registry::getInstance();
         //$this->host=$reg->getResource('host');
         $this->dbname=$reg->getResource('dbname');
         $this->username=$reg->getResource('username');
@@ -63,6 +65,14 @@ use application\exceptions;
         $connection = $this->startConnection();
         $this->stmt = $connection->prepare($sql);
         $this->stmt->execute($args);
+
+    }
+
+    public function getArray($sql)
+    {
+        $connection = $this->startConnection();
+        $this->stmt = $connection->query($sql);
+        return $this->stmt;
 
     }
 

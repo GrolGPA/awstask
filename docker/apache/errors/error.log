@@ -1,0 +1,319 @@
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.21.0.3. Set the 'ServerName' directive globally to suppress this message
+[Wed Sep 27 09:13:15.082361 2017] [mpm_prefork:notice] [pid 1] AH00163: Apache/2.4.10 (Debian) configured -- resuming normal operations
+[Wed Sep 27 09:13:15.082442 2017] [core:notice] [pid 1] AH00094: Command line: 'apache2 -D FOREGROUND'
+[Wed Sep 27 09:49:35.360853 2017] [:error] [pid 20] [client 172.21.0.4:51180] PHP Warning:  PDOStatement::execute(): SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens in /var/www/html/application/models/DB.php on line 65, referer: http://aws.task/Main
+[Wed Sep 27 09:49:35.360884 2017] [:error] [pid 20] [client 172.21.0.4:51180] PHP Stack trace:, referer: http://aws.task/Main
+[Wed Sep 27 09:49:35.360896 2017] [:error] [pid 20] [client 172.21.0.4:51180] PHP   1. {main}() /var/www/html/index.php:0, referer: http://aws.task/Main
+[Wed Sep 27 09:49:35.360904 2017] [:error] [pid 20] [client 172.21.0.4:51180] PHP   2. AppStarter::launch() /var/www/html/index.php:12, referer: http://aws.task/Main
+[Wed Sep 27 09:49:35.360910 2017] [:error] [pid 20] [client 172.21.0.4:51180] PHP   3. application\\controllers\\Route::start() /var/www/html/application/Bootstrap.php:37, referer: http://aws.task/Main
+[Wed Sep 27 09:49:35.360918 2017] [:error] [pid 20] [client 172.21.0.4:51180] PHP   4. application\\controllers\\Diary->addTask() /var/www/html/application/controllers/Route.php:76, referer: http://aws.task/Main
+[Wed Sep 27 09:49:35.360925 2017] [:error] [pid 20] [client 172.21.0.4:51180] PHP   5. application\\models\\Diary->addTask() /var/www/html/application/controllers/Diary.php:34, referer: http://aws.task/Main
+[Wed Sep 27 09:49:35.360931 2017] [:error] [pid 20] [client 172.21.0.4:51180] PHP   6. application\\models\\Model->run() /var/www/html/application/models/Diary.php:66, referer: http://aws.task/Main
+[Wed Sep 27 09:49:35.360938 2017] [:error] [pid 20] [client 172.21.0.4:51180] PHP   7. application\\models\\DB->queryList() /var/www/html/application/models/Model.php:30, referer: http://aws.task/Main
+[Wed Sep 27 09:49:35.360944 2017] [:error] [pid 20] [client 172.21.0.4:51180] PHP   8. PDOStatement->execute() /var/www/html/application/models/DB.php:65, referer: http://aws.task/Main
+[Wed Sep 27 09:50:48.028902 2017] [:error] [pid 18] [client 172.21.0.4:51204] PHP Parse error:  syntax error, unexpected '\xd1\x84\xd0\xb0\xd0\xb9\xd0\xbb' (T_STRING) in /var/www/html/application/models/Diary.php on line 31, referer: http://aws.task/Main
+[Wed Sep 27 09:50:48.028954 2017] [:error] [pid 18] [client 172.21.0.4:51204] PHP Stack trace:, referer: http://aws.task/Main
+[Wed Sep 27 09:50:48.028979 2017] [:error] [pid 18] [client 172.21.0.4:51204] PHP   1. {main}() /var/www/html/index.php:0, referer: http://aws.task/Main
+[Wed Sep 27 09:50:48.028998 2017] [:error] [pid 18] [client 172.21.0.4:51204] PHP   2. AppStarter::launch() /var/www/html/index.php:12, referer: http://aws.task/Main
+[Wed Sep 27 09:50:48.029016 2017] [:error] [pid 18] [client 172.21.0.4:51204] PHP   3. application\\controllers\\Route::start() /var/www/html/application/Bootstrap.php:37, referer: http://aws.task/Main
+[Wed Sep 27 09:50:48.029034 2017] [:error] [pid 18] [client 172.21.0.4:51204] PHP   4. application\\controllers\\Diary->__construct() /var/www/html/application/controllers/Route.php:70, referer: http://aws.task/Main
+[Wed Sep 27 09:50:48.029050 2017] [:error] [pid 18] [client 172.21.0.4:51204] PHP   5. spl_autoload_call() /var/www/html/application/controllers/Route.php:21, referer: http://aws.task/Main
+[Wed Sep 27 09:50:48.029067 2017] [:error] [pid 18] [client 172.21.0.4:51204] PHP   6. SplClassLoader->loadClass() /var/www/html/application/controllers/Route.php:21, referer: http://aws.task/Main
+[Wed Sep 27 09:52:16.462521 2017] [:error] [pid 17] [client 172.21.0.4:51234] PHP Fatal error:  Cannot re-assign auto-global variable _FILES in /var/www/html/application/models/Diary.php on line 19, referer: http://aws.task/Main
+[Wed Sep 27 09:52:16.462582 2017] [:error] [pid 17] [client 172.21.0.4:51234] PHP Stack trace:, referer: http://aws.task/Main
+[Wed Sep 27 09:52:16.462605 2017] [:error] [pid 17] [client 172.21.0.4:51234] PHP   1. {main}() /var/www/html/index.php:0, referer: http://aws.task/Main
+[Wed Sep 27 09:52:16.462624 2017] [:error] [pid 17] [client 172.21.0.4:51234] PHP   2. AppStarter::launch() /var/www/html/index.php:12, referer: http://aws.task/Main
+[Wed Sep 27 09:52:16.462641 2017] [:error] [pid 17] [client 172.21.0.4:51234] PHP   3. application\\controllers\\Route::start() /var/www/html/application/Bootstrap.php:37, referer: http://aws.task/Main
+[Wed Sep 27 09:52:16.462658 2017] [:error] [pid 17] [client 172.21.0.4:51234] PHP   4. application\\controllers\\Diary->__construct() /var/www/html/application/controllers/Route.php:70, referer: http://aws.task/Main
+[Wed Sep 27 09:52:16.462674 2017] [:error] [pid 17] [client 172.21.0.4:51234] PHP   5. spl_autoload_call() /var/www/html/application/controllers/Route.php:21, referer: http://aws.task/Main
+[Wed Sep 27 09:52:16.462691 2017] [:error] [pid 17] [client 172.21.0.4:51234] PHP   6. SplClassLoader->loadClass() /var/www/html/application/controllers/Route.php:21, referer: http://aws.task/Main
+[Wed Sep 27 12:57:19.621993 2017] [mpm_prefork:notice] [pid 1] AH00169: caught SIGTERM, shutting down
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.21.0.2. Set the 'ServerName' directive globally to suppress this message
+[Wed Sep 27 12:57:25.211130 2017] [mpm_prefork:notice] [pid 1] AH00163: Apache/2.4.10 (Debian) configured -- resuming normal operations
+[Wed Sep 27 12:57:25.211178 2017] [core:notice] [pid 1] AH00094: Command line: 'apache2 -D FOREGROUND'
+[Wed Sep 27 13:41:47.789559 2017] [:error] [pid 21] [client 172.21.0.5:39854] PHP Warning:  Missing argument 2 for application\\models\\Model::run(), called in /var/www/html/application/models/Diary.php on line 27 and defined in /var/www/html/application/models/Model.php on line 27, referer: http://aws.task/Main
+[Wed Sep 27 13:41:47.789612 2017] [:error] [pid 21] [client 172.21.0.5:39854] PHP Stack trace:, referer: http://aws.task/Main
+[Wed Sep 27 13:41:47.789639 2017] [:error] [pid 21] [client 172.21.0.5:39854] PHP   1. {main}() /var/www/html/index.php:0, referer: http://aws.task/Main
+[Wed Sep 27 13:41:47.789659 2017] [:error] [pid 21] [client 172.21.0.5:39854] PHP   2. AppStarter::launch() /var/www/html/index.php:12, referer: http://aws.task/Main
+[Wed Sep 27 13:41:47.789677 2017] [:error] [pid 21] [client 172.21.0.5:39854] PHP   3. application\\controllers\\Route::start() /var/www/html/application/Bootstrap.php:37, referer: http://aws.task/Main
+[Wed Sep 27 13:41:47.789694 2017] [:error] [pid 21] [client 172.21.0.5:39854] PHP   4. application\\controllers\\Diary->__construct() /var/www/html/application/controllers/Route.php:70, referer: http://aws.task/Main
+[Wed Sep 27 13:41:47.789710 2017] [:error] [pid 21] [client 172.21.0.5:39854] PHP   5. application\\models\\Diary->getData() /var/www/html/application/controllers/Diary.php:22, referer: http://aws.task/Main
+[Wed Sep 27 13:41:47.789727 2017] [:error] [pid 21] [client 172.21.0.5:39854] PHP   6. application\\models\\Model->run() /var/www/html/application/models/Diary.php:27, referer: http://aws.task/Main
+[Wed Sep 27 13:57:04.986929 2017] [:error] [pid 20] [client 172.21.0.5:40308] PHP Fatal error:  Call to undefined method application\\models\\Diary::getTasks() in /var/www/html/application/views/Diary.php on line 12
+[Wed Sep 27 13:57:04.986980 2017] [:error] [pid 20] [client 172.21.0.5:40308] PHP Stack trace:
+[Wed Sep 27 13:57:04.987000 2017] [:error] [pid 20] [client 172.21.0.5:40308] PHP   1. {main}() /var/www/html/index.php:0
+[Wed Sep 27 13:57:04.987019 2017] [:error] [pid 20] [client 172.21.0.5:40308] PHP   2. AppStarter::launch() /var/www/html/index.php:12
+[Wed Sep 27 13:57:04.987033 2017] [:error] [pid 20] [client 172.21.0.5:40308] PHP   3. application\\controllers\\Route::start() /var/www/html/application/Bootstrap.php:37
+[Wed Sep 27 13:57:04.987046 2017] [:error] [pid 20] [client 172.21.0.5:40308] PHP   4. application\\controllers\\Main->index() /var/www/html/application/controllers/Route.php:76
+[Wed Sep 27 13:57:04.987072 2017] [:error] [pid 20] [client 172.21.0.5:40308] PHP   5. application\\views\\View->generate() /var/www/html/application/controllers/Main.php:56
+[Wed Sep 27 13:57:04.987085 2017] [:error] [pid 20] [client 172.21.0.5:40308] PHP   6. include() /var/www/html/application/views/View.php:27
+[Wed Sep 27 13:57:04.987096 2017] [:error] [pid 20] [client 172.21.0.5:40308] PHP   7. include() /var/www/html/application/views/Template.php:15
+[Wed Sep 27 13:58:21.511107 2017] [:error] [pid 21] [client 172.21.0.5:40380] PHP Fatal error:  Call to a member function getData() on null in /var/www/html/application/controllers/Diary.php on line 28
+[Wed Sep 27 13:58:21.511154 2017] [:error] [pid 21] [client 172.21.0.5:40380] PHP Stack trace:
+[Wed Sep 27 13:58:21.511173 2017] [:error] [pid 21] [client 172.21.0.5:40380] PHP   1. {main}() /var/www/html/index.php:0
+[Wed Sep 27 13:58:21.511189 2017] [:error] [pid 21] [client 172.21.0.5:40380] PHP   2. AppStarter::launch() /var/www/html/index.php:12
+[Wed Sep 27 13:58:21.511204 2017] [:error] [pid 21] [client 172.21.0.5:40380] PHP   3. application\\controllers\\Route::start() /var/www/html/application/Bootstrap.php:37
+[Wed Sep 27 13:58:21.511219 2017] [:error] [pid 21] [client 172.21.0.5:40380] PHP   4. application\\controllers\\Main->index() /var/www/html/application/controllers/Route.php:76
+[Wed Sep 27 13:58:21.511233 2017] [:error] [pid 21] [client 172.21.0.5:40380] PHP   5. application\\views\\View->generate() /var/www/html/application/controllers/Main.php:56
+[Wed Sep 27 13:58:21.511247 2017] [:error] [pid 21] [client 172.21.0.5:40380] PHP   6. include() /var/www/html/application/views/View.php:27
+[Wed Sep 27 13:58:21.511260 2017] [:error] [pid 21] [client 172.21.0.5:40380] PHP   7. include() /var/www/html/application/views/Template.php:15
+[Wed Sep 27 13:58:21.511275 2017] [:error] [pid 21] [client 172.21.0.5:40380] PHP   8. application\\controllers\\Diary::getTasks() /var/www/html/application/views/Diary.php:12
+[Wed Sep 27 14:31:29.018060 2017] [:error] [pid 19] [client 172.21.0.5:40966] PHP Fatal error:  Call to a member function fetchAll() on null in /var/www/html/application/models/Diary.php on line 27, referer: http://aws.task/Main
+[Wed Sep 27 14:31:29.018103 2017] [:error] [pid 19] [client 172.21.0.5:40966] PHP Stack trace:, referer: http://aws.task/Main
+[Wed Sep 27 14:31:29.018124 2017] [:error] [pid 19] [client 172.21.0.5:40966] PHP   1. {main}() /var/www/html/index.php:0, referer: http://aws.task/Main
+[Wed Sep 27 14:31:29.018140 2017] [:error] [pid 19] [client 172.21.0.5:40966] PHP   2. AppStarter::launch() /var/www/html/index.php:12, referer: http://aws.task/Main
+[Wed Sep 27 14:31:29.018154 2017] [:error] [pid 19] [client 172.21.0.5:40966] PHP   3. application\\controllers\\Route::start() /var/www/html/application/Bootstrap.php:37, referer: http://aws.task/Main
+[Wed Sep 27 14:31:29.018168 2017] [:error] [pid 19] [client 172.21.0.5:40966] PHP   4. application\\controllers\\Diary->addTask() /var/www/html/application/controllers/Route.php:76, referer: http://aws.task/Main
+[Wed Sep 27 14:31:29.018182 2017] [:error] [pid 19] [client 172.21.0.5:40966] PHP   5. application\\controllers\\Diary::getTasks() /var/www/html/application/controllers/Diary.php:37, referer: http://aws.task/Main
+[Wed Sep 27 14:31:29.018195 2017] [:error] [pid 19] [client 172.21.0.5:40966] PHP   6. application\\models\\Diary->getData() /var/www/html/application/controllers/Diary.php:28, referer: http://aws.task/Main
+[Wed Sep 27 14:33:13.352829 2017] [:error] [pid 20] [client 172.21.0.5:40990] PHP Fatal error:  Call to a member function fetchAll() on string in /var/www/html/application/models/Diary.php on line 27, referer: http://aws.task/Main
+[Wed Sep 27 14:33:13.352865 2017] [:error] [pid 20] [client 172.21.0.5:40990] PHP Stack trace:, referer: http://aws.task/Main
+[Wed Sep 27 14:33:13.352877 2017] [:error] [pid 20] [client 172.21.0.5:40990] PHP   1. {main}() /var/www/html/index.php:0, referer: http://aws.task/Main
+[Wed Sep 27 14:33:13.352896 2017] [:error] [pid 20] [client 172.21.0.5:40990] PHP   2. AppStarter::launch() /var/www/html/index.php:12, referer: http://aws.task/Main
+[Wed Sep 27 14:33:13.352906 2017] [:error] [pid 20] [client 172.21.0.5:40990] PHP   3. application\\controllers\\Route::start() /var/www/html/application/Bootstrap.php:37, referer: http://aws.task/Main
+[Wed Sep 27 14:33:13.352915 2017] [:error] [pid 20] [client 172.21.0.5:40990] PHP   4. application\\controllers\\Diary->addTask() /var/www/html/application/controllers/Route.php:76, referer: http://aws.task/Main
+[Wed Sep 27 14:33:13.352924 2017] [:error] [pid 20] [client 172.21.0.5:40990] PHP   5. application\\controllers\\Diary::getTasks() /var/www/html/application/controllers/Diary.php:37, referer: http://aws.task/Main
+[Wed Sep 27 14:33:13.352932 2017] [:error] [pid 20] [client 172.21.0.5:40990] PHP   6. application\\models\\Diary->getData() /var/www/html/application/controllers/Diary.php:28, referer: http://aws.task/Main
+[Wed Sep 27 14:33:40.266129 2017] [:error] [pid 19] [client 172.21.0.5:41012] PHP Fatal error:  Call to a member function fetchAll() on string in /var/www/html/application/models/Diary.php on line 27, referer: http://aws.task/
+[Wed Sep 27 14:33:40.266169 2017] [:error] [pid 19] [client 172.21.0.5:41012] PHP Stack trace:, referer: http://aws.task/
+[Wed Sep 27 14:33:40.266180 2017] [:error] [pid 19] [client 172.21.0.5:41012] PHP   1. {main}() /var/www/html/index.php:0, referer: http://aws.task/
+[Wed Sep 27 14:33:40.266188 2017] [:error] [pid 19] [client 172.21.0.5:41012] PHP   2. AppStarter::launch() /var/www/html/index.php:12, referer: http://aws.task/
+[Wed Sep 27 14:33:40.266196 2017] [:error] [pid 19] [client 172.21.0.5:41012] PHP   3. application\\controllers\\Route::start() /var/www/html/application/Bootstrap.php:37, referer: http://aws.task/
+[Wed Sep 27 14:33:40.266204 2017] [:error] [pid 19] [client 172.21.0.5:41012] PHP   4. application\\controllers\\Diary->addTask() /var/www/html/application/controllers/Route.php:76, referer: http://aws.task/
+[Wed Sep 27 14:33:40.266212 2017] [:error] [pid 19] [client 172.21.0.5:41012] PHP   5. application\\controllers\\Diary::getTasks() /var/www/html/application/controllers/Diary.php:37, referer: http://aws.task/
+[Wed Sep 27 14:33:40.266225 2017] [:error] [pid 19] [client 172.21.0.5:41012] PHP   6. application\\models\\Diary->getData() /var/www/html/application/controllers/Diary.php:28, referer: http://aws.task/
+[Wed Sep 27 14:36:37.959692 2017] [:error] [pid 20] [client 172.21.0.5:41100] PHP Warning:  Missing argument 2 for application\\models\\Model::run(), called in /var/www/html/application/models/Diary.php on line 27 and defined in /var/www/html/application/models/Model.php on line 27, referer: http://aws.task/
+[Wed Sep 27 14:36:37.959735 2017] [:error] [pid 20] [client 172.21.0.5:41100] PHP Stack trace:, referer: http://aws.task/
+[Wed Sep 27 14:36:37.959747 2017] [:error] [pid 20] [client 172.21.0.5:41100] PHP   1. {main}() /var/www/html/index.php:0, referer: http://aws.task/
+[Wed Sep 27 14:36:37.959758 2017] [:error] [pid 20] [client 172.21.0.5:41100] PHP   2. AppStarter::launch() /var/www/html/index.php:12, referer: http://aws.task/
+[Wed Sep 27 14:36:37.959768 2017] [:error] [pid 20] [client 172.21.0.5:41100] PHP   3. application\\controllers\\Route::start() /var/www/html/application/Bootstrap.php:37, referer: http://aws.task/
+[Wed Sep 27 14:36:37.959777 2017] [:error] [pid 20] [client 172.21.0.5:41100] PHP   4. application\\controllers\\Diary->addTask() /var/www/html/application/controllers/Route.php:76, referer: http://aws.task/
+[Wed Sep 27 14:36:37.959787 2017] [:error] [pid 20] [client 172.21.0.5:41100] PHP   5. application\\controllers\\Diary::getTasks() /var/www/html/application/controllers/Diary.php:37, referer: http://aws.task/
+[Wed Sep 27 14:36:37.959797 2017] [:error] [pid 20] [client 172.21.0.5:41100] PHP   6. application\\models\\Diary->getData() /var/www/html/application/controllers/Diary.php:28, referer: http://aws.task/
+[Wed Sep 27 14:36:37.959823 2017] [:error] [pid 20] [client 172.21.0.5:41100] PHP   7. application\\models\\Model->run() /var/www/html/application/models/Diary.php:27, referer: http://aws.task/
+[Wed Sep 27 14:36:37.961389 2017] [:error] [pid 20] [client 172.21.0.5:41100] PHP Fatal error:  Call to undefined method application\\models\\DB::fetchAll() in /var/www/html/application/models/Diary.php on line 28, referer: http://aws.task/
+[Wed Sep 27 14:36:37.961403 2017] [:error] [pid 20] [client 172.21.0.5:41100] PHP Stack trace:, referer: http://aws.task/
+[Wed Sep 27 14:36:37.961411 2017] [:error] [pid 20] [client 172.21.0.5:41100] PHP   1. {main}() /var/www/html/index.php:0, referer: http://aws.task/
+[Wed Sep 27 14:36:37.961418 2017] [:error] [pid 20] [client 172.21.0.5:41100] PHP   2. AppStarter::launch() /var/www/html/index.php:12, referer: http://aws.task/
+[Wed Sep 27 14:36:37.961426 2017] [:error] [pid 20] [client 172.21.0.5:41100] PHP   3. application\\controllers\\Route::start() /var/www/html/application/Bootstrap.php:37, referer: http://aws.task/
+[Wed Sep 27 14:36:37.961434 2017] [:error] [pid 20] [client 172.21.0.5:41100] PHP   4. application\\controllers\\Diary->addTask() /var/www/html/application/controllers/Route.php:76, referer: http://aws.task/
+[Wed Sep 27 14:36:37.961441 2017] [:error] [pid 20] [client 172.21.0.5:41100] PHP   5. application\\controllers\\Diary::getTasks() /var/www/html/application/controllers/Diary.php:37, referer: http://aws.task/
+[Wed Sep 27 14:36:37.961448 2017] [:error] [pid 20] [client 172.21.0.5:41100] PHP   6. application\\models\\Diary->getData() /var/www/html/application/controllers/Diary.php:28, referer: http://aws.task/
+[Wed Sep 27 14:50:32.261648 2017] [:error] [pid 17] [client 172.21.0.5:41356] PHP Warning:  Missing argument 2 for application\\models\\DB::queryList(), called in /var/www/html/application/models/Diary.php on line 28 and defined in /var/www/html/application/models/DB.php on line 61
+[Wed Sep 27 14:50:32.261685 2017] [:error] [pid 17] [client 172.21.0.5:41356] PHP Stack trace:
+[Wed Sep 27 14:50:32.261695 2017] [:error] [pid 17] [client 172.21.0.5:41356] PHP   1. {main}() /var/www/html/index.php:0
+[Wed Sep 27 14:50:32.261704 2017] [:error] [pid 17] [client 172.21.0.5:41356] PHP   2. AppStarter::launch() /var/www/html/index.php:12
+[Wed Sep 27 14:50:32.261712 2017] [:error] [pid 17] [client 172.21.0.5:41356] PHP   3. application\\controllers\\Route::start() /var/www/html/application/Bootstrap.php:37
+[Wed Sep 27 14:50:32.261719 2017] [:error] [pid 17] [client 172.21.0.5:41356] PHP   4. application\\controllers\\Diary->addTask() /var/www/html/application/controllers/Route.php:76
+[Wed Sep 27 14:50:32.261725 2017] [:error] [pid 17] [client 172.21.0.5:41356] PHP   5. application\\controllers\\Diary::getTasks() /var/www/html/application/controllers/Diary.php:37
+[Wed Sep 27 14:50:32.261731 2017] [:error] [pid 17] [client 172.21.0.5:41356] PHP   6. application\\models\\Diary->getData() /var/www/html/application/controllers/Diary.php:28
+[Wed Sep 27 14:50:32.261737 2017] [:error] [pid 17] [client 172.21.0.5:41356] PHP   7. application\\models\\DB->queryList() /var/www/html/application/models/Diary.php:28
+[Wed Sep 27 14:50:32.262655 2017] [:error] [pid 17] [client 172.21.0.5:41356] PHP Fatal error:  Call to a member function fetch() on null in /var/www/html/application/models/Diary.php on line 30
+[Wed Sep 27 14:50:32.262669 2017] [:error] [pid 17] [client 172.21.0.5:41356] PHP Stack trace:
+[Wed Sep 27 14:50:32.262675 2017] [:error] [pid 17] [client 172.21.0.5:41356] PHP   1. {main}() /var/www/html/index.php:0
+[Wed Sep 27 14:50:32.262682 2017] [:error] [pid 17] [client 172.21.0.5:41356] PHP   2. AppStarter::launch() /var/www/html/index.php:12
+[Wed Sep 27 14:50:32.262688 2017] [:error] [pid 17] [client 172.21.0.5:41356] PHP   3. application\\controllers\\Route::start() /var/www/html/application/Bootstrap.php:37
+[Wed Sep 27 14:50:32.262694 2017] [:error] [pid 17] [client 172.21.0.5:41356] PHP   4. application\\controllers\\Diary->addTask() /var/www/html/application/controllers/Route.php:76
+[Wed Sep 27 14:50:32.262710 2017] [:error] [pid 17] [client 172.21.0.5:41356] PHP   5. application\\controllers\\Diary::getTasks() /var/www/html/application/controllers/Diary.php:37
+[Wed Sep 27 14:50:32.262716 2017] [:error] [pid 17] [client 172.21.0.5:41356] PHP   6. application\\models\\Diary->getData() /var/www/html/application/controllers/Diary.php:28
+[Wed Sep 27 14:50:43.795105 2017] [:error] [pid 18] [client 172.21.0.5:41372] PHP Warning:  Missing argument 2 for application\\models\\DB::queryList(), called in /var/www/html/application/models/Diary.php on line 28 and defined in /var/www/html/application/models/DB.php on line 61, referer: http://aws.task/
+[Wed Sep 27 14:50:43.795147 2017] [:error] [pid 18] [client 172.21.0.5:41372] PHP Stack trace:, referer: http://aws.task/
+[Wed Sep 27 14:50:43.795172 2017] [:error] [pid 18] [client 172.21.0.5:41372] PHP   1. {main}() /var/www/html/index.php:0, referer: http://aws.task/
+[Wed Sep 27 14:50:43.795182 2017] [:error] [pid 18] [client 172.21.0.5:41372] PHP   2. AppStarter::launch() /var/www/html/index.php:12, referer: http://aws.task/
+[Wed Sep 27 14:50:43.795191 2017] [:error] [pid 18] [client 172.21.0.5:41372] PHP   3. application\\controllers\\Route::start() /var/www/html/application/Bootstrap.php:37, referer: http://aws.task/
+[Wed Sep 27 14:50:43.795199 2017] [:error] [pid 18] [client 172.21.0.5:41372] PHP   4. application\\controllers\\Diary->addTask() /var/www/html/application/controllers/Route.php:76, referer: http://aws.task/
+[Wed Sep 27 14:50:43.795208 2017] [:error] [pid 18] [client 172.21.0.5:41372] PHP   5. application\\controllers\\Diary::getTasks() /var/www/html/application/controllers/Diary.php:37, referer: http://aws.task/
+[Wed Sep 27 14:50:43.795216 2017] [:error] [pid 18] [client 172.21.0.5:41372] PHP   6. application\\models\\Diary->getData() /var/www/html/application/controllers/Diary.php:28, referer: http://aws.task/
+[Wed Sep 27 14:50:43.795224 2017] [:error] [pid 18] [client 172.21.0.5:41372] PHP   7. application\\models\\DB->queryList() /var/www/html/application/models/Diary.php:28, referer: http://aws.task/
+[Wed Sep 27 14:50:43.798140 2017] [:error] [pid 18] [client 172.21.0.5:41372] PHP Fatal error:  Call to a member function fetch() on null in /var/www/html/application/models/Diary.php on line 30, referer: http://aws.task/
+[Wed Sep 27 14:50:43.798160 2017] [:error] [pid 18] [client 172.21.0.5:41372] PHP Stack trace:, referer: http://aws.task/
+[Wed Sep 27 14:50:43.798169 2017] [:error] [pid 18] [client 172.21.0.5:41372] PHP   1. {main}() /var/www/html/index.php:0, referer: http://aws.task/
+[Wed Sep 27 14:50:43.798185 2017] [:error] [pid 18] [client 172.21.0.5:41372] PHP   2. AppStarter::launch() /var/www/html/index.php:12, referer: http://aws.task/
+[Wed Sep 27 14:50:43.798193 2017] [:error] [pid 18] [client 172.21.0.5:41372] PHP   3. application\\controllers\\Route::start() /var/www/html/application/Bootstrap.php:37, referer: http://aws.task/
+[Wed Sep 27 14:50:43.798203 2017] [:error] [pid 18] [client 172.21.0.5:41372] PHP   4. application\\controllers\\Diary->addTask() /var/www/html/application/controllers/Route.php:76, referer: http://aws.task/
+[Wed Sep 27 14:50:43.798214 2017] [:error] [pid 18] [client 172.21.0.5:41372] PHP   5. application\\controllers\\Diary::getTasks() /var/www/html/application/controllers/Diary.php:37, referer: http://aws.task/
+[Wed Sep 27 14:50:43.798222 2017] [:error] [pid 18] [client 172.21.0.5:41372] PHP   6. application\\models\\Diary->getData() /var/www/html/application/controllers/Diary.php:28, referer: http://aws.task/
+[Wed Sep 27 14:52:17.905968 2017] [:error] [pid 19] [client 172.21.0.5:41396] PHP Fatal error:  Call to a member function fetch() on null in /var/www/html/application/models/Diary.php on line 30, referer: http://aws.task/
+[Wed Sep 27 14:52:17.906004 2017] [:error] [pid 19] [client 172.21.0.5:41396] PHP Stack trace:, referer: http://aws.task/
+[Wed Sep 27 14:52:17.906013 2017] [:error] [pid 19] [client 172.21.0.5:41396] PHP   1. {main}() /var/www/html/index.php:0, referer: http://aws.task/
+[Wed Sep 27 14:52:17.906031 2017] [:error] [pid 19] [client 172.21.0.5:41396] PHP   2. AppStarter::launch() /var/www/html/index.php:12, referer: http://aws.task/
+[Wed Sep 27 14:52:17.906040 2017] [:error] [pid 19] [client 172.21.0.5:41396] PHP   3. application\\controllers\\Route::start() /var/www/html/application/Bootstrap.php:37, referer: http://aws.task/
+[Wed Sep 27 14:52:17.906047 2017] [:error] [pid 19] [client 172.21.0.5:41396] PHP   4. application\\controllers\\Diary->addTask() /var/www/html/application/controllers/Route.php:76, referer: http://aws.task/
+[Wed Sep 27 14:52:17.906054 2017] [:error] [pid 19] [client 172.21.0.5:41396] PHP   5. application\\controllers\\Diary::getTasks() /var/www/html/application/controllers/Diary.php:37, referer: http://aws.task/
+[Wed Sep 27 14:52:17.906061 2017] [:error] [pid 19] [client 172.21.0.5:41396] PHP   6. application\\models\\Diary->getData() /var/www/html/application/controllers/Diary.php:28, referer: http://aws.task/
+[Wed Sep 27 14:52:47.826237 2017] [:error] [pid 20] [client 172.21.0.5:41404] PHP Fatal error:  Call to a member function fetch() on null in /var/www/html/application/models/Diary.php on line 30, referer: http://aws.task/
+[Wed Sep 27 14:52:47.826294 2017] [:error] [pid 20] [client 172.21.0.5:41404] PHP Stack trace:, referer: http://aws.task/
+[Wed Sep 27 14:52:47.826314 2017] [:error] [pid 20] [client 172.21.0.5:41404] PHP   1. {main}() /var/www/html/index.php:0, referer: http://aws.task/
+[Wed Sep 27 14:52:47.826332 2017] [:error] [pid 20] [client 172.21.0.5:41404] PHP   2. AppStarter::launch() /var/www/html/index.php:12, referer: http://aws.task/
+[Wed Sep 27 14:52:47.826349 2017] [:error] [pid 20] [client 172.21.0.5:41404] PHP   3. application\\controllers\\Route::start() /var/www/html/application/Bootstrap.php:37, referer: http://aws.task/
+[Wed Sep 27 14:52:47.826366 2017] [:error] [pid 20] [client 172.21.0.5:41404] PHP   4. application\\controllers\\Diary->addTask() /var/www/html/application/controllers/Route.php:76, referer: http://aws.task/
+[Wed Sep 27 14:52:47.826382 2017] [:error] [pid 20] [client 172.21.0.5:41404] PHP   5. application\\controllers\\Diary::getTasks() /var/www/html/application/controllers/Diary.php:37, referer: http://aws.task/
+[Wed Sep 27 14:52:47.826398 2017] [:error] [pid 20] [client 172.21.0.5:41404] PHP   6. application\\models\\Diary->getData() /var/www/html/application/controllers/Diary.php:28, referer: http://aws.task/
+[Wed Sep 27 14:52:50.307197 2017] [:error] [pid 17] [client 172.21.0.5:41412] PHP Fatal error:  Call to a member function fetch() on null in /var/www/html/application/models/Diary.php on line 30, referer: http://aws.task/
+[Wed Sep 27 14:52:50.307254 2017] [:error] [pid 17] [client 172.21.0.5:41412] PHP Stack trace:, referer: http://aws.task/
+[Wed Sep 27 14:52:50.307274 2017] [:error] [pid 17] [client 172.21.0.5:41412] PHP   1. {main}() /var/www/html/index.php:0, referer: http://aws.task/
+[Wed Sep 27 14:52:50.307297 2017] [:error] [pid 17] [client 172.21.0.5:41412] PHP   2. AppStarter::launch() /var/www/html/index.php:12, referer: http://aws.task/
+[Wed Sep 27 14:52:50.307319 2017] [:error] [pid 17] [client 172.21.0.5:41412] PHP   3. application\\controllers\\Route::start() /var/www/html/application/Bootstrap.php:37, referer: http://aws.task/
+[Wed Sep 27 14:52:50.307338 2017] [:error] [pid 17] [client 172.21.0.5:41412] PHP   4. application\\controllers\\Diary->addTask() /var/www/html/application/controllers/Route.php:76, referer: http://aws.task/
+[Wed Sep 27 14:52:50.307359 2017] [:error] [pid 17] [client 172.21.0.5:41412] PHP   5. application\\controllers\\Diary::getTasks() /var/www/html/application/controllers/Diary.php:37, referer: http://aws.task/
+[Wed Sep 27 14:52:50.307379 2017] [:error] [pid 17] [client 172.21.0.5:41412] PHP   6. application\\models\\Diary->getData() /var/www/html/application/controllers/Diary.php:28, referer: http://aws.task/
+[Wed Sep 27 14:53:00.441405 2017] [:error] [pid 18] [client 172.21.0.5:41424] PHP Fatal error:  Call to a member function fetch() on null in /var/www/html/application/models/Diary.php on line 30, referer: http://aws.task/
+[Wed Sep 27 14:53:00.441453 2017] [:error] [pid 18] [client 172.21.0.5:41424] PHP Stack trace:, referer: http://aws.task/
+[Wed Sep 27 14:53:00.441465 2017] [:error] [pid 18] [client 172.21.0.5:41424] PHP   1. {main}() /var/www/html/index.php:0, referer: http://aws.task/
+[Wed Sep 27 14:53:00.441480 2017] [:error] [pid 18] [client 172.21.0.5:41424] PHP   2. AppStarter::launch() /var/www/html/index.php:12, referer: http://aws.task/
+[Wed Sep 27 14:53:00.441490 2017] [:error] [pid 18] [client 172.21.0.5:41424] PHP   3. application\\controllers\\Route::start() /var/www/html/application/Bootstrap.php:37, referer: http://aws.task/
+[Wed Sep 27 14:53:00.441500 2017] [:error] [pid 18] [client 172.21.0.5:41424] PHP   4. application\\controllers\\Diary->addTask() /var/www/html/application/controllers/Route.php:76, referer: http://aws.task/
+[Wed Sep 27 14:53:00.441509 2017] [:error] [pid 18] [client 172.21.0.5:41424] PHP   5. application\\controllers\\Diary::getTasks() /var/www/html/application/controllers/Diary.php:37, referer: http://aws.task/
+[Wed Sep 27 14:53:00.441519 2017] [:error] [pid 18] [client 172.21.0.5:41424] PHP   6. application\\models\\Diary->getData() /var/www/html/application/controllers/Diary.php:28, referer: http://aws.task/
+[Wed Sep 27 14:53:15.819900 2017] [:error] [pid 19] [client 172.21.0.5:41432] PHP Fatal error:  Call to a member function fetch() on null in /var/www/html/application/models/Diary.php on line 30, referer: http://aws.task/
+[Wed Sep 27 14:53:15.819975 2017] [:error] [pid 19] [client 172.21.0.5:41432] PHP Stack trace:, referer: http://aws.task/
+[Wed Sep 27 14:53:15.819996 2017] [:error] [pid 19] [client 172.21.0.5:41432] PHP   1. {main}() /var/www/html/index.php:0, referer: http://aws.task/
+[Wed Sep 27 14:53:15.820013 2017] [:error] [pid 19] [client 172.21.0.5:41432] PHP   2. AppStarter::launch() /var/www/html/index.php:12, referer: http://aws.task/
+[Wed Sep 27 14:53:15.820028 2017] [:error] [pid 19] [client 172.21.0.5:41432] PHP   3. application\\controllers\\Route::start() /var/www/html/application/Bootstrap.php:37, referer: http://aws.task/
+[Wed Sep 27 14:53:15.820044 2017] [:error] [pid 19] [client 172.21.0.5:41432] PHP   4. application\\controllers\\Diary->addTask() /var/www/html/application/controllers/Route.php:76, referer: http://aws.task/
+[Wed Sep 27 14:53:15.820061 2017] [:error] [pid 19] [client 172.21.0.5:41432] PHP   5. application\\controllers\\Diary::getTasks() /var/www/html/application/controllers/Diary.php:37, referer: http://aws.task/
+[Wed Sep 27 14:53:15.820077 2017] [:error] [pid 19] [client 172.21.0.5:41432] PHP   6. application\\models\\Diary->getData() /var/www/html/application/controllers/Diary.php:28, referer: http://aws.task/
+[Wed Sep 27 14:53:18.704516 2017] [:error] [pid 20] [client 172.21.0.5:41438] PHP Fatal error:  Call to a member function fetch() on null in /var/www/html/application/models/Diary.php on line 30, referer: http://aws.task/
+[Wed Sep 27 14:53:18.704563 2017] [:error] [pid 20] [client 172.21.0.5:41438] PHP Stack trace:, referer: http://aws.task/
+[Wed Sep 27 14:53:18.704579 2017] [:error] [pid 20] [client 172.21.0.5:41438] PHP   1. {main}() /var/www/html/index.php:0, referer: http://aws.task/
+[Wed Sep 27 14:53:18.704593 2017] [:error] [pid 20] [client 172.21.0.5:41438] PHP   2. AppStarter::launch() /var/www/html/index.php:12, referer: http://aws.task/
+[Wed Sep 27 14:53:18.704606 2017] [:error] [pid 20] [client 172.21.0.5:41438] PHP   3. application\\controllers\\Route::start() /var/www/html/application/Bootstrap.php:37, referer: http://aws.task/
+[Wed Sep 27 14:53:18.704626 2017] [:error] [pid 20] [client 172.21.0.5:41438] PHP   4. application\\controllers\\Diary->addTask() /var/www/html/application/controllers/Route.php:76, referer: http://aws.task/
+[Wed Sep 27 14:53:18.704640 2017] [:error] [pid 20] [client 172.21.0.5:41438] PHP   5. application\\controllers\\Diary::getTasks() /var/www/html/application/controllers/Diary.php:37, referer: http://aws.task/
+[Wed Sep 27 14:53:18.704653 2017] [:error] [pid 20] [client 172.21.0.5:41438] PHP   6. application\\models\\Diary->getData() /var/www/html/application/controllers/Diary.php:28, referer: http://aws.task/
+[Wed Sep 27 15:01:10.991264 2017] [:error] [pid 17] [client 172.21.0.5:41642] PHP Fatal error:  Call to a member function fetch() on null in /var/www/html/application/models/Diary.php on line 26, referer: http://aws.task/
+[Wed Sep 27 15:01:10.991313 2017] [:error] [pid 17] [client 172.21.0.5:41642] PHP Stack trace:, referer: http://aws.task/
+[Wed Sep 27 15:01:10.991330 2017] [:error] [pid 17] [client 172.21.0.5:41642] PHP   1. {main}() /var/www/html/index.php:0, referer: http://aws.task/
+[Wed Sep 27 15:01:10.991345 2017] [:error] [pid 17] [client 172.21.0.5:41642] PHP   2. AppStarter::launch() /var/www/html/index.php:12, referer: http://aws.task/
+[Wed Sep 27 15:01:10.991361 2017] [:error] [pid 17] [client 172.21.0.5:41642] PHP   3. application\\controllers\\Route::start() /var/www/html/application/Bootstrap.php:37, referer: http://aws.task/
+[Wed Sep 27 15:01:10.991373 2017] [:error] [pid 17] [client 172.21.0.5:41642] PHP   4. application\\controllers\\Diary->addTask() /var/www/html/application/controllers/Route.php:76, referer: http://aws.task/
+[Wed Sep 27 15:01:10.991387 2017] [:error] [pid 17] [client 172.21.0.5:41642] PHP   5. application\\controllers\\Diary::getTasks() /var/www/html/application/controllers/Diary.php:37, referer: http://aws.task/
+[Wed Sep 27 15:01:10.991399 2017] [:error] [pid 17] [client 172.21.0.5:41642] PHP   6. application\\models\\Diary->getData() /var/www/html/application/controllers/Diary.php:28, referer: http://aws.task/
+[Wed Sep 27 15:01:13.661978 2017] [:error] [pid 21] [client 172.21.0.5:41648] PHP Fatal error:  Call to a member function fetch() on null in /var/www/html/application/models/Diary.php on line 26, referer: http://aws.task/
+[Wed Sep 27 15:01:13.662012 2017] [:error] [pid 21] [client 172.21.0.5:41648] PHP Stack trace:, referer: http://aws.task/
+[Wed Sep 27 15:01:13.662022 2017] [:error] [pid 21] [client 172.21.0.5:41648] PHP   1. {main}() /var/www/html/index.php:0, referer: http://aws.task/
+[Wed Sep 27 15:01:13.662031 2017] [:error] [pid 21] [client 172.21.0.5:41648] PHP   2. AppStarter::launch() /var/www/html/index.php:12, referer: http://aws.task/
+[Wed Sep 27 15:01:13.662039 2017] [:error] [pid 21] [client 172.21.0.5:41648] PHP   3. application\\controllers\\Route::start() /var/www/html/application/Bootstrap.php:37, referer: http://aws.task/
+[Wed Sep 27 15:01:13.662051 2017] [:error] [pid 21] [client 172.21.0.5:41648] PHP   4. application\\controllers\\Diary->addTask() /var/www/html/application/controllers/Route.php:76, referer: http://aws.task/
+[Wed Sep 27 15:01:13.662058 2017] [:error] [pid 21] [client 172.21.0.5:41648] PHP   5. application\\controllers\\Diary::getTasks() /var/www/html/application/controllers/Diary.php:37, referer: http://aws.task/
+[Wed Sep 27 15:01:13.662065 2017] [:error] [pid 21] [client 172.21.0.5:41648] PHP   6. application\\models\\Diary->getData() /var/www/html/application/controllers/Diary.php:28, referer: http://aws.task/
+[Wed Sep 27 15:01:52.116363 2017] [:error] [pid 18] [client 172.21.0.5:41662] PHP Fatal error:  Call to a member function fetch() on null in /var/www/html/application/models/Diary.php on line 26, referer: http://aws.task/
+[Wed Sep 27 15:01:52.116415 2017] [:error] [pid 18] [client 172.21.0.5:41662] PHP Stack trace:, referer: http://aws.task/
+[Wed Sep 27 15:01:52.116440 2017] [:error] [pid 18] [client 172.21.0.5:41662] PHP   1. {main}() /var/www/html/index.php:0, referer: http://aws.task/
+[Wed Sep 27 15:01:52.116460 2017] [:error] [pid 18] [client 172.21.0.5:41662] PHP   2. AppStarter::launch() /var/www/html/index.php:12, referer: http://aws.task/
+[Wed Sep 27 15:01:52.116478 2017] [:error] [pid 18] [client 172.21.0.5:41662] PHP   3. application\\controllers\\Route::start() /var/www/html/application/Bootstrap.php:37, referer: http://aws.task/
+[Wed Sep 27 15:01:52.116496 2017] [:error] [pid 18] [client 172.21.0.5:41662] PHP   4. application\\controllers\\Diary->addTask() /var/www/html/application/controllers/Route.php:76, referer: http://aws.task/
+[Wed Sep 27 15:01:52.116533 2017] [:error] [pid 18] [client 172.21.0.5:41662] PHP   5. application\\controllers\\Diary::getTasks() /var/www/html/application/controllers/Diary.php:37, referer: http://aws.task/
+[Wed Sep 27 15:01:52.116551 2017] [:error] [pid 18] [client 172.21.0.5:41662] PHP   6. application\\models\\Diary->getData() /var/www/html/application/controllers/Diary.php:28, referer: http://aws.task/
+[Wed Sep 27 15:01:54.732132 2017] [:error] [pid 19] [client 172.21.0.5:41668] PHP Fatal error:  Call to a member function fetch() on null in /var/www/html/application/models/Diary.php on line 26, referer: http://aws.task/
+[Wed Sep 27 15:01:54.732190 2017] [:error] [pid 19] [client 172.21.0.5:41668] PHP Stack trace:, referer: http://aws.task/
+[Wed Sep 27 15:01:54.732209 2017] [:error] [pid 19] [client 172.21.0.5:41668] PHP   1. {main}() /var/www/html/index.php:0, referer: http://aws.task/
+[Wed Sep 27 15:01:54.732226 2017] [:error] [pid 19] [client 172.21.0.5:41668] PHP   2. AppStarter::launch() /var/www/html/index.php:12, referer: http://aws.task/
+[Wed Sep 27 15:01:54.732243 2017] [:error] [pid 19] [client 172.21.0.5:41668] PHP   3. application\\controllers\\Route::start() /var/www/html/application/Bootstrap.php:37, referer: http://aws.task/
+[Wed Sep 27 15:01:54.732258 2017] [:error] [pid 19] [client 172.21.0.5:41668] PHP   4. application\\controllers\\Diary->addTask() /var/www/html/application/controllers/Route.php:76, referer: http://aws.task/
+[Wed Sep 27 15:01:54.732274 2017] [:error] [pid 19] [client 172.21.0.5:41668] PHP   5. application\\controllers\\Diary::getTasks() /var/www/html/application/controllers/Diary.php:37, referer: http://aws.task/
+[Wed Sep 27 15:01:54.732289 2017] [:error] [pid 19] [client 172.21.0.5:41668] PHP   6. application\\models\\Diary->getData() /var/www/html/application/controllers/Diary.php:28, referer: http://aws.task/
+[Wed Sep 27 15:02:12.831600 2017] [:error] [pid 20] [client 172.21.0.5:41674] PHP Fatal error:  Call to a member function fetch() on null in /var/www/html/application/models/Diary.php on line 26, referer: http://aws.task/
+[Wed Sep 27 15:02:12.831649 2017] [:error] [pid 20] [client 172.21.0.5:41674] PHP Stack trace:, referer: http://aws.task/
+[Wed Sep 27 15:02:12.831674 2017] [:error] [pid 20] [client 172.21.0.5:41674] PHP   1. {main}() /var/www/html/index.php:0, referer: http://aws.task/
+[Wed Sep 27 15:02:12.831697 2017] [:error] [pid 20] [client 172.21.0.5:41674] PHP   2. AppStarter::launch() /var/www/html/index.php:12, referer: http://aws.task/
+[Wed Sep 27 15:02:12.831712 2017] [:error] [pid 20] [client 172.21.0.5:41674] PHP   3. application\\controllers\\Route::start() /var/www/html/application/Bootstrap.php:37, referer: http://aws.task/
+[Wed Sep 27 15:02:12.831725 2017] [:error] [pid 20] [client 172.21.0.5:41674] PHP   4. application\\controllers\\Diary->addTask() /var/www/html/application/controllers/Route.php:76, referer: http://aws.task/
+[Wed Sep 27 15:02:12.831738 2017] [:error] [pid 20] [client 172.21.0.5:41674] PHP   5. application\\controllers\\Diary::getTasks() /var/www/html/application/controllers/Diary.php:37, referer: http://aws.task/
+[Wed Sep 27 15:02:12.831751 2017] [:error] [pid 20] [client 172.21.0.5:41674] PHP   6. application\\models\\Diary->getData() /var/www/html/application/controllers/Diary.php:28, referer: http://aws.task/
+[Wed Sep 27 15:02:31.035277 2017] [:error] [pid 17] [client 172.21.0.5:41688] PHP Fatal error:  Call to a member function fetch() on null in /var/www/html/application/models/Diary.php on line 26, referer: http://aws.task/
+[Wed Sep 27 15:02:31.035341 2017] [:error] [pid 17] [client 172.21.0.5:41688] PHP Stack trace:, referer: http://aws.task/
+[Wed Sep 27 15:02:31.035366 2017] [:error] [pid 17] [client 172.21.0.5:41688] PHP   1. {main}() /var/www/html/index.php:0, referer: http://aws.task/
+[Wed Sep 27 15:02:31.035385 2017] [:error] [pid 17] [client 172.21.0.5:41688] PHP   2. AppStarter::launch() /var/www/html/index.php:12, referer: http://aws.task/
+[Wed Sep 27 15:02:31.035434 2017] [:error] [pid 17] [client 172.21.0.5:41688] PHP   3. application\\controllers\\Route::start() /var/www/html/application/Bootstrap.php:37, referer: http://aws.task/
+[Wed Sep 27 15:02:31.035458 2017] [:error] [pid 17] [client 172.21.0.5:41688] PHP   4. application\\controllers\\Diary->addTask() /var/www/html/application/controllers/Route.php:76, referer: http://aws.task/
+[Wed Sep 27 15:02:31.035477 2017] [:error] [pid 17] [client 172.21.0.5:41688] PHP   5. application\\controllers\\Diary::getTasks() /var/www/html/application/controllers/Diary.php:37, referer: http://aws.task/
+[Wed Sep 27 15:02:31.035495 2017] [:error] [pid 17] [client 172.21.0.5:41688] PHP   6. application\\models\\Diary->getData() /var/www/html/application/controllers/Diary.php:28, referer: http://aws.task/
+[Wed Sep 27 15:02:33.321531 2017] [:error] [pid 21] [client 172.21.0.5:41694] PHP Fatal error:  Call to a member function fetch() on null in /var/www/html/application/models/Diary.php on line 26, referer: http://aws.task/
+[Wed Sep 27 15:02:33.321590 2017] [:error] [pid 21] [client 172.21.0.5:41694] PHP Stack trace:, referer: http://aws.task/
+[Wed Sep 27 15:02:33.321614 2017] [:error] [pid 21] [client 172.21.0.5:41694] PHP   1. {main}() /var/www/html/index.php:0, referer: http://aws.task/
+[Wed Sep 27 15:02:33.321632 2017] [:error] [pid 21] [client 172.21.0.5:41694] PHP   2. AppStarter::launch() /var/www/html/index.php:12, referer: http://aws.task/
+[Wed Sep 27 15:02:33.321649 2017] [:error] [pid 21] [client 172.21.0.5:41694] PHP   3. application\\controllers\\Route::start() /var/www/html/application/Bootstrap.php:37, referer: http://aws.task/
+[Wed Sep 27 15:02:33.321666 2017] [:error] [pid 21] [client 172.21.0.5:41694] PHP   4. application\\controllers\\Diary->addTask() /var/www/html/application/controllers/Route.php:76, referer: http://aws.task/
+[Wed Sep 27 15:02:33.321684 2017] [:error] [pid 21] [client 172.21.0.5:41694] PHP   5. application\\controllers\\Diary::getTasks() /var/www/html/application/controllers/Diary.php:37, referer: http://aws.task/
+[Wed Sep 27 15:02:33.321700 2017] [:error] [pid 21] [client 172.21.0.5:41694] PHP   6. application\\models\\Diary->getData() /var/www/html/application/controllers/Diary.php:28, referer: http://aws.task/
+[Wed Sep 27 15:03:02.687408 2017] [:error] [pid 18] [client 172.21.0.5:41706] PHP Fatal error:  Call to undefined method application\\models\\DB::tartConnection() in /var/www/html/application/models/DB.php on line 71, referer: http://aws.task/
+[Wed Sep 27 15:03:02.687435 2017] [:error] [pid 18] [client 172.21.0.5:41706] PHP Stack trace:, referer: http://aws.task/
+[Wed Sep 27 15:03:02.687443 2017] [:error] [pid 18] [client 172.21.0.5:41706] PHP   1. {main}() /var/www/html/index.php:0, referer: http://aws.task/
+[Wed Sep 27 15:03:02.687452 2017] [:error] [pid 18] [client 172.21.0.5:41706] PHP   2. AppStarter::launch() /var/www/html/index.php:12, referer: http://aws.task/
+[Wed Sep 27 15:03:02.687460 2017] [:error] [pid 18] [client 172.21.0.5:41706] PHP   3. application\\controllers\\Route::start() /var/www/html/application/Bootstrap.php:37, referer: http://aws.task/
+[Wed Sep 27 15:03:02.687469 2017] [:error] [pid 18] [client 172.21.0.5:41706] PHP   4. application\\controllers\\Diary->addTask() /var/www/html/application/controllers/Route.php:76, referer: http://aws.task/
+[Wed Sep 27 15:03:02.687477 2017] [:error] [pid 18] [client 172.21.0.5:41706] PHP   5. application\\controllers\\Diary::getTasks() /var/www/html/application/controllers/Diary.php:37, referer: http://aws.task/
+[Wed Sep 27 15:03:02.687485 2017] [:error] [pid 18] [client 172.21.0.5:41706] PHP   6. application\\models\\Diary->getData() /var/www/html/application/controllers/Diary.php:28, referer: http://aws.task/
+[Wed Sep 27 15:03:02.687493 2017] [:error] [pid 18] [client 172.21.0.5:41706] PHP   7. application\\models\\DB->getArray() /var/www/html/application/models/Diary.php:24, referer: http://aws.task/
+[Wed Sep 27 15:03:51.124399 2017] [:error] [pid 19] [client 172.21.0.5:41716] PHP Fatal error:  Call to a member function fetch() on null in /var/www/html/application/models/Diary.php on line 26, referer: http://aws.task/
+[Wed Sep 27 15:03:51.124479 2017] [:error] [pid 19] [client 172.21.0.5:41716] PHP Stack trace:, referer: http://aws.task/
+[Wed Sep 27 15:03:51.124509 2017] [:error] [pid 19] [client 172.21.0.5:41716] PHP   1. {main}() /var/www/html/index.php:0, referer: http://aws.task/
+[Wed Sep 27 15:03:51.124529 2017] [:error] [pid 19] [client 172.21.0.5:41716] PHP   2. AppStarter::launch() /var/www/html/index.php:12, referer: http://aws.task/
+[Wed Sep 27 15:03:51.124551 2017] [:error] [pid 19] [client 172.21.0.5:41716] PHP   3. application\\controllers\\Route::start() /var/www/html/application/Bootstrap.php:37, referer: http://aws.task/
+[Wed Sep 27 15:03:51.124570 2017] [:error] [pid 19] [client 172.21.0.5:41716] PHP   4. application\\controllers\\Diary->addTask() /var/www/html/application/controllers/Route.php:76, referer: http://aws.task/
+[Wed Sep 27 15:03:51.124589 2017] [:error] [pid 19] [client 172.21.0.5:41716] PHP   5. application\\controllers\\Diary::getTasks() /var/www/html/application/controllers/Diary.php:37, referer: http://aws.task/
+[Wed Sep 27 15:03:51.124608 2017] [:error] [pid 19] [client 172.21.0.5:41716] PHP   6. application\\models\\Diary->getData() /var/www/html/application/controllers/Diary.php:28, referer: http://aws.task/
+[Wed Sep 27 15:04:35.177532 2017] [:error] [pid 20] [client 172.21.0.5:41724] PHP Fatal error:  Unsupported operand types in /var/www/html/application/models/Diary.php on line 27, referer: http://aws.task/
+[Wed Sep 27 15:04:35.177585 2017] [:error] [pid 20] [client 172.21.0.5:41724] PHP Stack trace:, referer: http://aws.task/
+[Wed Sep 27 15:04:35.177607 2017] [:error] [pid 20] [client 172.21.0.5:41724] PHP   1. {main}() /var/www/html/index.php:0, referer: http://aws.task/
+[Wed Sep 27 15:04:35.177634 2017] [:error] [pid 20] [client 172.21.0.5:41724] PHP   2. AppStarter::launch() /var/www/html/index.php:12, referer: http://aws.task/
+[Wed Sep 27 15:04:35.177654 2017] [:error] [pid 20] [client 172.21.0.5:41724] PHP   3. application\\controllers\\Route::start() /var/www/html/application/Bootstrap.php:37, referer: http://aws.task/
+[Wed Sep 27 15:04:35.177675 2017] [:error] [pid 20] [client 172.21.0.5:41724] PHP   4. application\\controllers\\Diary->addTask() /var/www/html/application/controllers/Route.php:76, referer: http://aws.task/
+[Wed Sep 27 15:04:35.177697 2017] [:error] [pid 20] [client 172.21.0.5:41724] PHP   5. application\\controllers\\Diary::getTasks() /var/www/html/application/controllers/Diary.php:37, referer: http://aws.task/
+[Wed Sep 27 15:04:35.177716 2017] [:error] [pid 20] [client 172.21.0.5:41724] PHP   6. application\\models\\Diary->getData() /var/www/html/application/controllers/Diary.php:28, referer: http://aws.task/
+[Wed Sep 27 15:05:00.346584 2017] [:error] [pid 17] [client 172.21.0.5:41734] PHP Fatal error:  Unsupported operand types in /var/www/html/application/models/Diary.php on line 27, referer: http://aws.task/
+[Wed Sep 27 15:05:00.346632 2017] [:error] [pid 17] [client 172.21.0.5:41734] PHP Stack trace:, referer: http://aws.task/
+[Wed Sep 27 15:05:00.346647 2017] [:error] [pid 17] [client 172.21.0.5:41734] PHP   1. {main}() /var/www/html/index.php:0, referer: http://aws.task/
+[Wed Sep 27 15:05:00.346663 2017] [:error] [pid 17] [client 172.21.0.5:41734] PHP   2. AppStarter::launch() /var/www/html/index.php:12, referer: http://aws.task/
+[Wed Sep 27 15:05:00.346678 2017] [:error] [pid 17] [client 172.21.0.5:41734] PHP   3. application\\controllers\\Route::start() /var/www/html/application/Bootstrap.php:37, referer: http://aws.task/
+[Wed Sep 27 15:05:00.346692 2017] [:error] [pid 17] [client 172.21.0.5:41734] PHP   4. application\\controllers\\Diary->addTask() /var/www/html/application/controllers/Route.php:76, referer: http://aws.task/
+[Wed Sep 27 15:05:00.346706 2017] [:error] [pid 17] [client 172.21.0.5:41734] PHP   5. application\\controllers\\Diary::getTasks() /var/www/html/application/controllers/Diary.php:37, referer: http://aws.task/
+[Wed Sep 27 15:05:00.346720 2017] [:error] [pid 17] [client 172.21.0.5:41734] PHP   6. application\\models\\Diary->getData() /var/www/html/application/controllers/Diary.php:28, referer: http://aws.task/
+[Wed Sep 27 15:05:04.696440 2017] [:error] [pid 21] [client 172.21.0.5:41742] PHP Fatal error:  Unsupported operand types in /var/www/html/application/models/Diary.php on line 27, referer: http://aws.task/
+[Wed Sep 27 15:05:04.696492 2017] [:error] [pid 21] [client 172.21.0.5:41742] PHP Stack trace:, referer: http://aws.task/
+[Wed Sep 27 15:05:04.696511 2017] [:error] [pid 21] [client 172.21.0.5:41742] PHP   1. {main}() /var/www/html/index.php:0, referer: http://aws.task/
+[Wed Sep 27 15:05:04.696527 2017] [:error] [pid 21] [client 172.21.0.5:41742] PHP   2. AppStarter::launch() /var/www/html/index.php:12, referer: http://aws.task/
+[Wed Sep 27 15:05:04.696544 2017] [:error] [pid 21] [client 172.21.0.5:41742] PHP   3. application\\controllers\\Route::start() /var/www/html/application/Bootstrap.php:37, referer: http://aws.task/
+[Wed Sep 27 15:05:04.696561 2017] [:error] [pid 21] [client 172.21.0.5:41742] PHP   4. application\\controllers\\Diary->addTask() /var/www/html/application/controllers/Route.php:76, referer: http://aws.task/
+[Wed Sep 27 15:05:04.696578 2017] [:error] [pid 21] [client 172.21.0.5:41742] PHP   5. application\\controllers\\Diary::getTasks() /var/www/html/application/controllers/Diary.php:37, referer: http://aws.task/
+[Wed Sep 27 15:05:04.696593 2017] [:error] [pid 21] [client 172.21.0.5:41742] PHP   6. application\\models\\Diary->getData() /var/www/html/application/controllers/Diary.php:28, referer: http://aws.task/
+[Wed Sep 27 15:09:56.322614 2017] [:error] [pid 20] [client 172.21.0.5:41934] PHP Parse error:  syntax error, unexpected '}' in /var/www/html/application/models/Diary.php on line 34, referer: http://aws.task/Main
+[Wed Sep 27 15:09:56.322666 2017] [:error] [pid 20] [client 172.21.0.5:41934] PHP Stack trace:, referer: http://aws.task/Main
+[Wed Sep 27 15:09:56.322685 2017] [:error] [pid 20] [client 172.21.0.5:41934] PHP   1. {main}() /var/www/html/index.php:0, referer: http://aws.task/Main
+[Wed Sep 27 15:09:56.322702 2017] [:error] [pid 20] [client 172.21.0.5:41934] PHP   2. AppStarter::launch() /var/www/html/index.php:12, referer: http://aws.task/Main
+[Wed Sep 27 15:09:56.322719 2017] [:error] [pid 20] [client 172.21.0.5:41934] PHP   3. application\\controllers\\Route::start() /var/www/html/application/Bootstrap.php:37, referer: http://aws.task/Main
+[Wed Sep 27 15:09:56.322736 2017] [:error] [pid 20] [client 172.21.0.5:41934] PHP   4. application\\controllers\\Diary->__construct() /var/www/html/application/controllers/Route.php:70, referer: http://aws.task/Main
+[Wed Sep 27 15:09:56.322752 2017] [:error] [pid 20] [client 172.21.0.5:41934] PHP   5. spl_autoload_call() /var/www/html/application/controllers/Route.php:21, referer: http://aws.task/Main
+[Wed Sep 27 15:09:56.322768 2017] [:error] [pid 20] [client 172.21.0.5:41934] PHP   6. SplClassLoader->loadClass() /var/www/html/application/controllers/Route.php:21, referer: http://aws.task/Main
+[Wed Sep 27 15:10:18.814261 2017] [:error] [pid 17] [client 172.21.0.5:41972] PHP Warning:  require(.//application/models/PDO.php): failed to open stream: No such file or directory in /var/www/html/application/SplClassLoader.php on line 121, referer: http://aws.task/Main
+[Wed Sep 27 15:10:18.814300 2017] [:error] [pid 17] [client 172.21.0.5:41972] PHP Stack trace:, referer: http://aws.task/Main
+[Wed Sep 27 15:10:18.814310 2017] [:error] [pid 17] [client 172.21.0.5:41972] PHP   1. {main}() /var/www/html/index.php:0, referer: http://aws.task/Main
+[Wed Sep 27 15:10:18.814321 2017] [:error] [pid 17] [client 172.21.0.5:41972] PHP   2. AppStarter::launch() /var/www/html/index.php:12, referer: http://aws.task/Main
+[Wed Sep 27 15:10:18.814329 2017] [:error] [pid 17] [client 172.21.0.5:41972] PHP   3. application\\controllers\\Route::start() /var/www/html/application/Bootstrap.php:37, referer: http://aws.task/Main
+[Wed Sep 27 15:10:18.814337 2017] [:error] [pid 17] [client 172.21.0.5:41972] PHP   4. application\\controllers\\Diary->addTask() /var/www/html/application/controllers/Route.php:76, referer: http://aws.task/Main
+[Wed Sep 27 15:10:18.814356 2017] [:error] [pid 17] [client 172.21.0.5:41972] PHP   5. application\\controllers\\Diary::getTasks() /var/www/html/application/controllers/Diary.php:37, referer: http://aws.task/Main
+[Wed Sep 27 15:10:18.814364 2017] [:error] [pid 17] [client 172.21.0.5:41972] PHP   6. application\\models\\Diary->getData() /var/www/html/application/controllers/Diary.php:28, referer: http://aws.task/Main
+[Wed Sep 27 15:10:18.814371 2017] [:error] [pid 17] [client 172.21.0.5:41972] PHP   7. spl_autoload_call() /var/www/html/application/controllers/Diary.php:26, referer: http://aws.task/Main
+[Wed Sep 27 15:10:18.814378 2017] [:error] [pid 17] [client 172.21.0.5:41972] PHP   8. SplClassLoader->loadClass() /var/www/html/application/controllers/Diary.php:26, referer: http://aws.task/Main
+[Wed Sep 27 15:10:18.814444 2017] [:error] [pid 17] [client 172.21.0.5:41972] PHP Fatal error:  require(): Failed opening required './/application/models/PDO.php' (include_path='.:/usr/local/lib/php') in /var/www/html/application/SplClassLoader.php on line 121, referer: http://aws.task/Main
+[Wed Sep 27 15:10:18.814453 2017] [:error] [pid 17] [client 172.21.0.5:41972] PHP Stack trace:, referer: http://aws.task/Main
+[Wed Sep 27 15:10:18.814459 2017] [:error] [pid 17] [client 172.21.0.5:41972] PHP   1. {main}() /var/www/html/index.php:0, referer: http://aws.task/Main
+[Wed Sep 27 15:10:18.814467 2017] [:error] [pid 17] [client 172.21.0.5:41972] PHP   2. AppStarter::launch() /var/www/html/index.php:12, referer: http://aws.task/Main
+[Wed Sep 27 15:10:18.814474 2017] [:error] [pid 17] [client 172.21.0.5:41972] PHP   3. application\\controllers\\Route::start() /var/www/html/application/Bootstrap.php:37, referer: http://aws.task/Main
+[Wed Sep 27 15:10:18.814482 2017] [:error] [pid 17] [client 172.21.0.5:41972] PHP   4. application\\controllers\\Diary->addTask() /var/www/html/application/controllers/Route.php:76, referer: http://aws.task/Main
+[Wed Sep 27 15:10:18.814489 2017] [:error] [pid 17] [client 172.21.0.5:41972] PHP   5. application\\controllers\\Diary::getTasks() /var/www/html/application/controllers/Diary.php:37, referer: http://aws.task/Main
+[Wed Sep 27 15:10:18.814496 2017] [:error] [pid 17] [client 172.21.0.5:41972] PHP   6. application\\models\\Diary->getData() /var/www/html/application/controllers/Diary.php:28, referer: http://aws.task/Main
+[Wed Sep 27 15:10:18.814503 2017] [:error] [pid 17] [client 172.21.0.5:41972] PHP   7. spl_autoload_call() /var/www/html/application/controllers/Diary.php:26, referer: http://aws.task/Main
+[Wed Sep 27 15:10:18.814511 2017] [:error] [pid 17] [client 172.21.0.5:41972] PHP   8. SplClassLoader->loadClass() /var/www/html/application/controllers/Diary.php:26, referer: http://aws.task/Main
+[Wed Sep 27 15:14:12.422470 2017] [:error] [pid 21] [client 172.21.0.5:42082] PHP Catchable fatal error:  Argument 1 passed to application\\controllers\\Diary::getTasks() must be an instance of application\\models\\Diary, none given, called in /var/www/html/application/views/Diary.php on line 12 and defined in /var/www/html/application/controllers/Diary.php on line 25, referer: http://aws.task/Main
+[Wed Sep 27 15:14:12.422502 2017] [:error] [pid 21] [client 172.21.0.5:42082] PHP Stack trace:, referer: http://aws.task/Main
+[Wed Sep 27 15:14:12.422511 2017] [:error] [pid 21] [client 172.21.0.5:42082] PHP   1. {main}() /var/www/html/index.php:0, referer: http://aws.task/Main
+[Wed Sep 27 15:14:12.422520 2017] [:error] [pid 21] [client 172.21.0.5:42082] PHP   2. AppStarter::launch() /var/www/html/index.php:12, referer: http://aws.task/Main
+[Wed Sep 27 15:14:12.422531 2017] [:error] [pid 21] [client 172.21.0.5:42082] PHP   3. application\\controllers\\Route::start() /var/www/html/application/Bootstrap.php:37, referer: http://aws.task/Main
+[Wed Sep 27 15:14:12.422539 2017] [:error] [pid 21] [client 172.21.0.5:42082] PHP   4. application\\controllers\\Main->index() /var/www/html/application/controllers/Route.php:76, referer: http://aws.task/Main
+[Wed Sep 27 15:14:12.422559 2017] [:error] [pid 21] [client 172.21.0.5:42082] PHP   5. application\\views\\View->generate() /var/www/html/application/controllers/Main.php:56, referer: http://aws.task/Main
+[Wed Sep 27 15:14:12.422566 2017] [:error] [pid 21] [client 172.21.0.5:42082] PHP   6. include() /var/www/html/application/views/View.php:27, referer: http://aws.task/Main
+[Wed Sep 27 15:14:12.422573 2017] [:error] [pid 21] [client 172.21.0.5:42082] PHP   7. include() /var/www/html/application/views/Template.php:15, referer: http://aws.task/Main
+[Wed Sep 27 15:14:12.422580 2017] [:error] [pid 21] [client 172.21.0.5:42082] PHP   8. application\\controllers\\Diary::getTasks() /var/www/html/application/views/Diary.php:12, referer: http://aws.task/Main
+[Wed Sep 27 15:18:15.771777 2017] [mpm_prefork:notice] [pid 1] AH00169: caught SIGTERM, shutting down

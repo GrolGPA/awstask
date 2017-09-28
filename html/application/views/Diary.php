@@ -8,6 +8,13 @@
 <H1>Welcome to the family diary!</H1>
 <H3>Your housework:</H3>
 
+<?php
+
+
+?>
+
+
+
 <form enctype="multipart/form-data" action="Diary/addTask" method="post">
     <p>
         <label>Task: </label>
@@ -24,7 +31,7 @@
     <p>
         <label>Upload file (only image): </label><br>
         <input type="hidden" name="MAX_FILE_SIZE" value="5242880" />
-        <input id="file" name="file" type="file" accept="image/*">
+        <input id="file" name="file" type="file" >
     </p>
     <p>
     <p>

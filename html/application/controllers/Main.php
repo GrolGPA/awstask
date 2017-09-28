@@ -35,11 +35,12 @@ class Main extends Controller
     {
         models\Session::destroy();
         header('Location: ../Main');
-        //include 'application/views/Login.php';
-        //exit();
 
     }
 
+    /**
+     *
+     */
     function addUser()
     {
         $this->view->generate('Registration.php', 'Template.php');
@@ -53,10 +54,20 @@ class Main extends Controller
      */
     function index()
     {
-        $this->view->generate('Diary.php', 'Template.php');
 
+        $this->view->generate('Content.php', 'Template.php');
+        $diary = new Diary();
+        $diary->run();
         $login = new Login();
         $login->invoke();
     }
+
+
+    function getError()
+    {
+        echo "ERROR 404";
+    }
+
+
 
 }

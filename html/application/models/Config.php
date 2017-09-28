@@ -57,13 +57,18 @@ class Config
         }
     }
 
-
+    /**
+     * If DB configs are not settined in regestry, settup it
+     */
     public function setRegistry()
     {
         $reg = controllers\Registry::getInstance();
-        foreach ($this->config as $key => $value) {
-            $reg->setResource($key, $value);
+        foreach ($this->config as $key => $value)
+        {
+            $reg->setResource($key, $value, true);
         }
+
+
     }
 
 
