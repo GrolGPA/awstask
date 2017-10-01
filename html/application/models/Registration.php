@@ -43,8 +43,10 @@ class Registration extends Model
                 ":categoryID" => $_POST['category']
                 );
             $this->stmt = new DB();
-            $this->stmt->queryList($sql, $args);
-            header('Location: ../Main');
+            if ($this->stmt->queryList($sql, $args))
+            {
+                echo "User successfully added";
+            }
 
         }
 

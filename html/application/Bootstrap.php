@@ -53,6 +53,10 @@ class AppStarter
         {
             die ( $e ->getMessage() );
         }
+        catch (exceptions\Registration $e)
+        {
+            die ( $e ->getMessage() );
+        }
         catch (\Exeption $e)
         {
             die ( $e ->__toString() );

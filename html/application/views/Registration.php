@@ -23,4 +23,6 @@
         <button type="submit"><span>Registration</span></button>
         <button type="reset"><span>Reset</span></button>
     </p>
+    <br>
+    <a href="/Main">To the main page</a>
 </form>
