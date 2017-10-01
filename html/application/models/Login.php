@@ -23,12 +23,13 @@ class Login extends Model
     public function run()
     {
 
-        $sql = 'SELECT `userID` FROM `users` WHERE `username` = :username AND `password` = md5(:password)';
+        $sql = 'SELECT `userID`, `categoryID` FROM `users` WHERE `username` = :username AND `password` = md5(:password)';
         $args = array(
             ':username' => $_POST['username'],
             ':password' => $_POST['password']
         );
         $this->stmt = parent::run($sql, $args);
+        $user = $this->stmt->fetch();
         $count = $this->stmt->count();
 
         if($count > 0)
@@ -36,17 +37,14 @@ class Login extends Model
             Session::init();
             Session::set('loggedIn', true);
 
-            /** Seek type of family member */
-            $sql = 'SELECT `category`, `username` FROM `categories` JOIN  `users` ON categories.categoryID = users.categoryID WHERE `username` = :username';
-            $args = array(
-                ':username' => $_POST['username']
-            );
-            $this->stmt = parent::run($sql, $args);
-            $user = $this->stmt->fetch();
-            $user_cat = $user['category'];
-            Session::set('member', $user_cat);
+            Session::set('username', $_POST['username']);
 
-            return $user_cat;
+            /** Seek type of family member */
+            $usercat = $user['0']['categoryID'];
+            Session::set('member', $usercat);
+
+
+            // legasy returning
             return 'login';
         }
         else

@@ -34,17 +34,15 @@ class Diary extends Controller
     public function addTask()
     {
         $this->model->addTask();
-        header('Location: ../Main');
+        //header('Location: ../Main');
     }
 
     public function run()
     {
         $tasks=self::getTasks();
+
         include_once ('application/views/Diary.php');
 
-        /** @var TEST $user */
-        $user = models\Session::get('member');
-        print_r ($user);
     }
 
 }

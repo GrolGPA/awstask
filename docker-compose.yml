@@ -16,7 +16,7 @@ services:
                         - ./:/var/www/
                         - ./docker/apache/php.ini:/usr/local/etc/php/php.ini
                         - ./docker/apache/sites-enabled/:/etc/apache2/sites-enabled/
-                        - /tmp/:/tmp/
+                        - ./tmp/:/var/www/tmp/
 
                 networks:
                         - backend
