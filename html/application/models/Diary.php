@@ -29,11 +29,13 @@ class Diary extends Model
     }
 
 
-    function addTask()
+    function addTask($files = false)
     {
 
-        $file_path = UpFile::upload($_FILES);
-
+        if (is_uploaded_file($files['upfile']['tmp_name']))
+        {
+            $file_path = UpFile::upload($files);
+        }
         $sql = "INSERT INTO tasks (`taskDistrib`, `task`, `filePath`) VALUES (:taskDistrib, :task, :filePath)";
         $args = array(
             ":task" => $_POST['task'],
@@ -46,7 +48,7 @@ class Diary extends Model
 
     function makeDone($task_id)
     {
-        $sql = "UPDATE `tasks` SET `done` = 'yes' WHERE taskID = :taskID";
+        $sql = "UPDATE `tasks` SET `done` = 'Yes' WHERE taskID = :taskID";
         $args = array(
             ":taskID" => $task_id
         );

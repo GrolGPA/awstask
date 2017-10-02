@@ -72,6 +72,9 @@
         echo "</tr>";
     }
 
+$member = application\models\Session::get('member');
+$type = gettype($member);
+echo "Grolup: ".application\models\Session::get('member');
 
 ?>
 </table>

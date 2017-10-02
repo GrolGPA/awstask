@@ -14,17 +14,50 @@ use application\models;
 
 class Diary extends Controller
 {
+    private $permis;
 
+    /**
+     * Diary constructor.
+     */
     function __construct()
     {
         parent::__construct();
+        $arigth = new Permissions();
+        $this->permis = $arigth->getPermis();
         $this->model = new models\Diary();
     }
 
+    /**
+     * Default action of Diary class
+     */
+    public function run()
+    {
+        $tasks=self::getTasks();
+        include_once ('application/views/Diary.php');
+    }
+
+    /**
+     * @return array
+     */
     public function getTasks()
     {
-       $tasks = $this->model->getData();
-       return $tasks;
+
+        /** TESTS */
+        print_r($this->permis);
+//        echo $this->permis[upload];
+
+
+       /** Show tasks if user have permission to view */
+       if ($this->permis['view'])
+       {
+           $tasks = $this->model->getData();
+           return $tasks;
+       }
+       else
+       {
+           echo "You don't have permissions to view diary";
+           echo "<br><br><a href=\"/Main\">Back to the diary</a>";
+       }
     }
 
 
@@ -33,33 +66,73 @@ class Diary extends Controller
      */
     public function addTask()
     {
-        $this->model->addTask();
-        //header('Location: ../Main');
+        if(is_uploaded_file($_FILES['upfile']['tmp_name']))
+        {
+            if ($this->permis['upload'])
+            {
+                $this->model->addTask($_FILES);
+            }
+            else
+            {
+                echo " You don't have permissions to uploading files";
+                echo "<br><br><a href=\"/Main\">Back to the diary</a>";
+            }
+
+        }
+        else
+        {
+            $this->model->addTask();
+            header("location: /Main");
+        }
+
     }
 
-    public function run()
-    {
-        $tasks=self::getTasks();
 
-        include_once ('application/views/Diary.php');
-
-    }
-
+    /**
+     * Make status done
+     *
+     * @param $task_id
+     */
     public function makeDone ($task_id)
     {
-        $this->model->makeDone($task_id);
-        header("location: /Main");
+        if ($this->permis['done'])
+        {
+            $this->model->makeDone($task_id);
+            header("location: /Main");
+        }
+        else
+        {
+            echo "You don't have permissions to make DONE";
+            echo "<br><br><a href=\"/Main\">Back to the diary</a>";
+        }
     }
 
+    /**
+     * Distribute tasks
+     *
+     * @param $task_id
+     */
     public function chgDoer($task_id)
     {
-        $params = array(
-            "taskID"=>$task_id,
-            "doer"=>$_POST['doer']
-        );
 
-        $this->model->chgDoer($params);
-        header("location: /Main");
+        $chk_perm = $this->permis['distrib'];
+
+
+        if ($this->permis['distrib'])
+        {
+            $params = array(
+                "taskID" => $task_id,
+                "doer" => $_POST['doer']
+            );
+            $this->model->chgDoer($params);
+            header("location: /Main");
+        }
+        else
+        {
+            echo "You don't have permission to distribute of tasks!";
+            echo $chk_perm;
+            echo "<br><br><a href=\"/Main\">Back to the diary</a>";
+        }
     }
 
 }
