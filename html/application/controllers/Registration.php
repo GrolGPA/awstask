@@ -23,8 +23,6 @@ class Registration extends Controller
      */
     public function __construct()
     {
-//        $this->config = new models\Config();
-//        $this->config ->setRegistry();
         parent::__construct();
         $this ->model = new models\Registration();
     }

@@ -21,9 +21,7 @@ class Main extends Controller
         $logged = models\Session::get('loggedIn');
         if($logged == false) {
             models\Session::destroy();
-           // header('Location: ../Main');
-           // include 'application/views/Login.php';
-//            exit();
+
         }
     }
 

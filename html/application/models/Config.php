@@ -23,7 +23,7 @@ class Config
      */
     function __construct()
     {
-        //Setting parametrs of Database
+        /**  Setting parametrs of Database */
         $this->config = array(
             'host' => 'db', //value overridden in models/DB.php
             'dbname' => 'local',

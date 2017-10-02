@@ -42,10 +42,6 @@ class Diary extends Controller
     public function getTasks()
     {
 
-        /** TESTS */
-        print_r($this->permis);
-//        echo $this->permis[upload];
-
 
        /** Show tasks if user have permission to view */
        if ($this->permis['view'])

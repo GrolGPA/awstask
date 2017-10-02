@@ -32,7 +32,7 @@ class Registration extends Model
         if($count > 0)
         {
             throw new exceptions\Registration("User already registered");
-            //header('Location: ../Registration');
+
         }
         else
         {

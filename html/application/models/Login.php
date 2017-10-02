@@ -44,7 +44,7 @@ class Login extends Model
             Session::set('member', $usercat);
 
 
-            // legasy returning
+
             return 'login';
         }
         else

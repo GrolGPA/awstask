@@ -18,19 +18,19 @@ class Route
 {
     static function start()
     {
-        // controller and default action
+        /** controller and default action */
         $controller_name = 'Main';
         $action_name = 'index';
 
         $routes = explode('/', $_SERVER['REQUEST_URI']);
 
-        // get controller name
+        /** get controller name */
         if ( !empty($routes[1]) )
         {
             $controller_name = $routes[1];
         }
 
-        // get action name
+        /** get action name */
         if ( !empty($routes[2]) )
         {
             $action_name = $routes[2];
@@ -41,12 +41,7 @@ class Route
             $param = $routes[3];
         }
 
-        // добавляем префиксы
         $model_name = "models\\".$controller_name;
-//        $controller_name = 'controllers\\'.$controller_name;
-        //$action_name = 'action/'.$action_name;
-
-        // подцепляем файл с классом модели (файла модели может и не быть)
 
         $model_file = strtolower($model_name).'.php';
         $model_path = "models/".$model_file;
@@ -55,34 +50,20 @@ class Route
             include "models/".$model_file;
         }
 
-        // подцепляем файл с классом контроллера
-        //$controller_file = strtolower($controller_name).'.php';
-        $controller_path = "application\\controllers\\".$controller_name;
-//        if(file_exists($controller_path))
-//        {
-//            include "application/controllers/".$controller_file;
-//        }
-//        else
-//        {
-//            /*
-//            правильно было бы кинуть здесь исключение,
-//            но для упрощения сразу сделаем редирект на страницу 404
-//            */
-//            Route::ErrorPage404();
-//        }
 
-        // создаем контроллер
+        $controller_path = "application\\controllers\\".$controller_name;
+
+        /** creating controller */
         $controller = new $controller_path;
         $action = $action_name;
 
         if(method_exists($controller, $action))
         {
-            // вызываем действие контроллера
+            /** starting controller */
             $controller->$action($param);
         }
         else
         {
-            // здесь также разумнее было бы кинуть исключение
             Route::ErrorPage404();
         }
 

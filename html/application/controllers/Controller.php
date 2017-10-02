@@ -44,7 +44,6 @@ class Controller
     function run()
     {
         $this->model->run();
-       // $this->view = new views\View();
     }
 
 }

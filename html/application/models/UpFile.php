@@ -57,7 +57,7 @@ class UpFile
                 /** Checking MIME Type */
                 $finfo = finfo_open(FILEINFO_MIME_TYPE);
                 $mimetype = finfo_file($finfo, $file['upfile']['tmp_name']);
-               // $finfo = finfo_open($file['upfile']['tmp_name'], FILEINFO_MIME_TYPE);
+
             if (false === $ext = array_search($mimetype,
                     array(
                         'jpg' => 'image/jpeg',

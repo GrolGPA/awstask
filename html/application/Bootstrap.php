@@ -35,8 +35,6 @@ class AppStarter
              */
             self::autoloader();
             controllers\Route::start();
-//            $session_start = new controllers\Main();
-//            $session_start->index();
 
 
         }
@@ -65,11 +63,7 @@ class AppStarter
             die ( $e ->__toString() );
         }
 
-        /** TESTS */
 
-        /** test of Regestry */
-//        $req = controllers\Registry::getInstance();
-//        print_r($req->getResource(user));
 
 
     }
