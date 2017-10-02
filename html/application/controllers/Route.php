@@ -36,6 +36,11 @@ class Route
             $action_name = $routes[2];
         }
 
+        if ( !empty($routes[3]) )
+        {
+            $param = $routes[3];
+        }
+
         // добавляем префиксы
         $model_name = "models\\".$controller_name;
 //        $controller_name = 'controllers\\'.$controller_name;
@@ -73,7 +78,7 @@ class Route
         if(method_exists($controller, $action))
         {
             // вызываем действие контроллера
-            $controller->$action();
+            $controller->$action($param);
         }
         else
         {

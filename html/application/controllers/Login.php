@@ -33,6 +33,7 @@ class Login extends Controller
 
         if (models\Session::get('loggedIn') == true )
         {
+
             include 'application/views/AfterLogin.php';
         }
         else

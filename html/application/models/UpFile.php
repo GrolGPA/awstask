@@ -20,31 +20,21 @@ class UpFile
     {
     }
 
+    /**
+     * @param array $file
+     * @return mixed
+     */
     public static function upload($file)
     {
-        //uploading file
 
-        echo 'Некоторая отладочная информация:';
-        print_r($file);
-
-
-        //header('Content-Type: text/plain; charset=utf-8');
-
-        try
-        {
-
-            // Undefined | Multiple Files | $_FILES Corruption Attack
-            // If this request falls under any of them, treat it invalid.
-            if
-            (
-                !isset($file['upfile']['error']) ||
-                is_array($file['upfile']['error'])
-            )
+            /** Undefined | Multiple Files | $_FILES Corruption Attack
+             If this request falls under any of them, treat it invalid. */
+            if(!isset($file['upfile']['error']) || is_array($file['upfile']['error']))
             {
-                //throw new exceptions\RuntimeException('Invalid parameters.');
+                throw new exceptions\RuntimeException('Invalid parameters.');
             }
 
-            // Check $_FILES['upfile']['error'] value.
+            /** Checking $_FILES['upfile']['error'] value. */
             switch ($file['upfile']['error'])
             {
                 case UPLOAD_ERR_OK:
@@ -58,33 +48,31 @@ class UpFile
                     throw new exceptions\RuntimeException('Unknown errors.');
             }
 
-            // You should also check filesize here.
-            if ($file['upfile']['size'] > 1000000)
+            /** Сheckштп filesize. Max 5Mb */
+            if ($file['upfile']['size'] > 5242880)
             {
                 throw new exceptions\RuntimeException('Exceeded filesize limit.');
             }
 
-                // Check MIME Type
-//            $finfo = finfo_open(FILEINFO_MIME_TYPE);
-//            if (false === $ext = array_search(
-//                    $finfo->($_FILES['upfile']['tmp_name']),
-//                    array(
-//                        'jpg' => 'image/jpeg',
-//                        'png' => 'image/png',
-//                        'gif' => 'image/gif',
-//                    ),
-//                    true
-//                ))
-//                {
-//                    throw new exceptions\RuntimeException('Invalid file format.');
-//                }
+                /** Checking MIME Type */
+                $finfo = finfo_open(FILEINFO_MIME_TYPE);
+                $mimetype = finfo_file($finfo, $file['upfile']['tmp_name']);
+               // $finfo = finfo_open($file['upfile']['tmp_name'], FILEINFO_MIME_TYPE);
+            if (false === $ext = array_search($mimetype,
+                    array(
+                        'jpg' => 'image/jpeg',
+                        'png' => 'image/png',
+                        'gif' => 'image/gif'),
+                    true))
+                {
+                    throw new exceptions\RuntimeException('Invalid file format.');
+                }
+                $upfile = $file['upfile']['name'];
 
-                // You should name it uniquely.
-                // DO NOT USE $_FILES['upfile']['name'] WITHOUT ANY VALIDATION !!
-                // On this example, obtain safe unique name from its binary data.
-//            $fpath = sprintf('./uploads/%s.%s',
-//                sha1_file($_FILES['upfile']['tmp_name']), "jpg"/** $ext */);
-                $fpath = $file['upfile']['tmp_name'];
+                /** Getting name file without file extension and generate file path */
+                preg_match("/(.*)\.?(\w{3,4})$/", $upfile, $origname);
+                $fpath = sprintf('./uploads/%s%s', $origname[1], $ext);
+
                 if (!move_uploaded_file($file['upfile']['tmp_name'], $fpath))
                 {
                     throw new exceptions\RuntimeException('Failed to move uploaded file.');
@@ -92,13 +80,8 @@ class UpFile
 
                 echo 'File is uploaded successfully.';
 
-            }
-        catch (exceptions\RuntimeException $e)
-        {
+                header("location: ../Main");
 
-            echo $e->getMessage();
-
-        }
         return $fpath;
 
     }

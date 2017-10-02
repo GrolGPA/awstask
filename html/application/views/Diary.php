@@ -5,12 +5,13 @@
     <title>Diary</title>
     <style type="text/css">
         TABLE {
-            width: 850px; /* Ширина таблицы */
-            border-collapse: collapse; /* Убираем двойные линии между ячейками */
+            width: 850px;
+
         }
         TD, TH {
-            padding: 3px; /* Поля вокруг содержимого таблицы */
-            border: 0px; /* Параметры рамки */
+            padding: 3px;
+            border: 0px;
+            width: 800px;
         }
     </style>
 </head>
@@ -19,24 +20,55 @@
 <H3>Your housework:</H3>
 <table>
     <tr>
-        <td><b>Task</b></td>
+        <td ><b>Task</b></td>
         <td><b>Doer</b></td>
-        <td><b>Done</b></td>
+        <td><b>Comleated</b></td>
         <td><b>Attached file</b></td>
+        <td><b>Make complete</b></td>
+        <td><b>Change doer</b></td>
+
     </tr>
 <?php
 
 /**
  * Display list of tasks
  */
-    foreach ($tasks as $key)
+    foreach ($tasks as $tarray)
     {
-
-    echo "<tr>";
-        foreach ($key as $value)
+        echo "<tr>";
+        foreach ($tarray as $key => $value)
         {
-            echo "<td>".$value."</td>";
+
+            if ($key == "taskID")
+            {
+                $task_id = $value;
+            }
+            elseif ($key == "filePath")
+            {
+                echo "<td><a href=".$value.">".$value."</a></td>";
+            }
+            else
+            {
+                echo "<td>".$value."</td>";
+
+            }
+
         }
+
+
+        echo "<td><form action=\"Diary\makeDone\\".$task_id."\" method=\"post\">
+        <button type=\"submit\"><span>COMPLETE</span></button>
+        </form></td>";
+        echo "<td>
+        <table><tr>
+        <form action=\"Diary\chgDoer\\".$task_id."\" method=\"post\">
+        <select id=\"doer\" name=\"doer\" size=\"1\">
+            <option value=\"1\">Father</option>
+            <option value=\"2\">Mother</option>
+            <option value=\"3\">Child</option>
+        </select>
+        <button type=\"submit\"><span>Change</span></button>
+        </form> </tr></table></td>";
         echo "</tr>";
     }
 

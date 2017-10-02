@@ -48,7 +48,6 @@ class AppStarter
         {
             die ( $e ->getMessage() );
         }
-
         catch (exceptions\DbException $e)
         {
             die ( $e ->getMessage() );
@@ -56,6 +55,10 @@ class AppStarter
         catch (exceptions\Registration $e)
         {
             die ( $e ->getMessage() );
+        }
+        catch (\PDOException $e)
+        {
+            echo $e->getMessage();
         }
         catch (\Exeption $e)
         {

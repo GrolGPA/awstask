@@ -23,7 +23,7 @@ class Diary extends Model
      */
     public function getData()
     {
-        $sql = 'SELECT `task`, `category`, `done`, `filePath` FROM `tasks` JOIN `categories` ON tasks.taskDistrib = categories.categoryID';
+        $sql = 'SELECT `taskID`, `task`, `category`, `done`, `filePath` FROM `tasks` JOIN `categories` ON tasks.taskDistrib = categories.categoryID';
         $data = parent::getData($sql);
         return $data;
     }
@@ -42,6 +42,25 @@ class Diary extends Model
         );
         parent::run($sql, $args);
 
+    }
+
+    function makeDone($task_id)
+    {
+        $sql = "UPDATE `tasks` SET `done` = 'yes' WHERE taskID = :taskID";
+        $args = array(
+            ":taskID" => $task_id
+        );
+        parent::run($sql,$args);
+    }
+
+    function chgDoer($params)
+    {
+        $sql = "UPDATE `tasks` SET `taskDistrib` = :doer WHERE taskID = :taskID";
+        $args = array(
+            ":taskID" => $params['taskID'],
+            ":doer" => $params['doer']
+        );
+        parent::run($sql,$args);
     }
 
 

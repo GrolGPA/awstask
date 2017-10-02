@@ -3,17 +3,17 @@
 <head>
 </head>
 <body>
+
 <?php
 /**
  * Show greeting
  */
-echo 'Hello, '.$this->model->getData().'<br>';
-//if(application\models\Session::get(loggedIn))
-//{
-//    echo "<meta http-equiv='refresh' content='2'>";
-//}
+$username = \application\models\Session::get('username');
+echo '<h3>You are logged in as: '.$username.'</h3>';
 ?>
-<form action="window.location.reload()" method="post">
+
+<a href="Main">Show the diary</a>
+<br><br>
 <a href="Main/logout">Logout</a>
 </body>
 </html>

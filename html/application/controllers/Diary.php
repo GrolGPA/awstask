@@ -45,4 +45,21 @@ class Diary extends Controller
 
     }
 
+    public function makeDone ($task_id)
+    {
+        $this->model->makeDone($task_id);
+        header("location: /Main");
+    }
+
+    public function chgDoer($task_id)
+    {
+        $params = array(
+            "taskID"=>$task_id,
+            "doer"=>$_POST['doer']
+        );
+
+        $this->model->chgDoer($params);
+        header("location: /Main");
+    }
+
 }
