@@ -61,7 +61,7 @@
     <p>
         <label>Upload file (only image): </label><br>
         <input type="hidden" name="MAX_FILE_SIZE" value="5242880" />
-        <input id="file" name="file" type="file" >
+        <input id="upfile" name="upfile" type="file" >
     </p>
     <p>
     <p>
